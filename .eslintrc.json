@@ -1,0 +1,19 @@
+{
+    "extends": [
+        "standard",
+        "plugin:react/recommended"
+    ],
+    "plugins": [
+        "babel"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "comma-dangle": ["error", "always-multiline"],
+        "eol-last": ["error", "always"],
+        "indent": ["error", "tab"],
+        "jsx-quotes": ["error", "prefer-single"],
+        "no-tabs": "off",
+        "quotes": ["error", "single"],
+        "space-before-function-paren": ["error", "never"]
+    }
+}

@@ -1,0 +1,107 @@
+@photoDiameter: 100px;
+
+.pm-profile-content {
+    display: block;
+    position: relative;
+    margin: auto;
+    border-radius: 3px;
+
+    margin-top: calc(@photoDiameter/2 + 5px);
+    background: white;
+    width: 80%;
+    padding: 20px;
+    min-width: 200px;
+    max-width: 620px;
+}
+
+.pm-profile-photo {
+    border-radius: 50%;
+    border: 3px solid #fff;
+    height: @photoDiameter;
+    width: @photoDiameter;
+    background-repeat: no-repeat;
+    background-image: url('../assets/photo.jpg');
+    background-size: @photoDiameter @photoDiameter;
+    box-shadow: inset 1px 1px 10px gray;
+}
+
+.pm-profile-header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.pm-profile-header--text {
+    margin-left: 20px;
+}
+
+.pm-profile-name, .pm-profile-job, .pm-profile-location, .pm-profile-tags {
+    margin: 5px;
+}
+
+.pm-profile-tags {
+
+    padding-left: 0;
+    
+    li {
+        display: inline-block;
+        padding: 5px 0;
+    }
+
+    .pm-link--tag:first-child {
+        margin-left: 0;
+    }
+}
+
+.pm-profile-sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.pm-profile-socialLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin: 0;
+
+    li { 
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .pm-profile-content {
+        margin-top: 20%;
+        text-align: center;
+    }
+
+    .pm-profile-header--text {
+        display: block;
+        width: 100%;
+        position: relative;
+        padding-left: 0;
+        margin: 0;
+        padding-top: calc(@photoDiameter/2);
+    }
+
+    .pm-profile-sections {
+        flex-direction: column;
+    }
+
+    .pm-profile-photo {
+        position: absolute;
+        top: calc(-@photoDiameter/2 - 20px);
+        left: calc(50% - @photoDiameter/2);
+    }
+
+    .pm-profile-socialLinks {
+        display: inline-block;
+        width: 100%;
+        padding: 0;   
+    }
+
+}
