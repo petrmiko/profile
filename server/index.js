@@ -12,7 +12,7 @@ konteiner.registerPath(path.join(__dirname, 'middleware'), { suffix: 'middleware
 async function run() {
 	const httpServer = konteiner.get('httpServer')
 
-	console.log(konteiner.getDependenciesProvisionStructure())
+	console.log(konteiner.getDependencyMap())
 
 	const { address, port } = await httpServer.start(httpServer.getServer())
 	console.log(`Http server started on http://${address}:${port}`)
