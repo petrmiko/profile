@@ -1,5 +1,5 @@
 require('dotenv').config()
-const Konteiner = require('konteiner')
+const Konteiner = require('@petrmiko/konteiner')
 const path = require('path')
 
 const config = require('../config')
