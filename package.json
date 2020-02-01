@@ -11,8 +11,7 @@
     "url": "git+ssh://git@github.com:petrmiko/profile.git"
   },
   "engines": {
-    "node": "10.13.0",
-    "npm": "~6.4.0"
+    "node": ">=10"
   },
   "scripts": {
     "build": "npm run clean && ./node_modules/.bin/parcel build ./client/index.html --public-url='/static/'",
@@ -23,7 +22,8 @@
     "test": "echo 'Error: no test specified'",
     "server": "node ./server/index",
     "start": "cross-env NODE_ENV='production' npm run server",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "gcp-build": "npm run build"
   },
   "lint-staged": {
     "*.js": [
