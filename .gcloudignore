@@ -2,6 +2,7 @@
 .git
 .gitignore
 
+.cache
 node_modules/
 dist/
 Procfile
