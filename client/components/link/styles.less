@@ -1,4 +1,4 @@
-a, .pm-link {
+a, .link {
     color: #000000;
 
     &:hover {
@@ -6,7 +6,7 @@ a, .pm-link {
     }
 }
 
-.pm-link--socialIcon.pm-link--disabled {
+.link--socialIcon.link--disabled {
     &:hover {
         cursor: default;
         background: lightgray;
@@ -14,7 +14,7 @@ a, .pm-link {
     }
 }
 
-.pm-link--inverse {
+.link--inverse {
     color: #fff;
 
     &:hover {
@@ -22,7 +22,7 @@ a, .pm-link {
     }
 }
 
-.pm-link--tag {
+.link--tag {
     font-family: monospace;
     font-size: medium;
     margin: 5px 10px;
@@ -36,9 +36,13 @@ a, .pm-link {
         border-color: rgb(98, 163, 243);
         color: #fff;
     }
+
+    &:first-child {
+        margin-left: 0;
+    }
 }
 
-.pm-link--socialIcon {
+.link--socialIcon {
     background: #fff;
     fill: lightgray;
     display: inline-block;

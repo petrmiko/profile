@@ -1,4 +1,4 @@
-import './app.less'
+import styles from './app.less'
 
 import React, { useEffect } from 'react'
 
@@ -10,7 +10,7 @@ const App = () => {
 		document.title = 'Petr Miko.cz - Personal page'
 	})
 
-	return <div className='pm-profile'>
+	return <div className={styles.app}>
 		<Content />
 		<Footer />
 	</div>

@@ -1,6 +1,6 @@
 @photoDiameter: 100px;
 
-.pm-profile-content {
+.content {
     display: block;
     position: relative;
     margin: auto;
@@ -14,7 +14,7 @@
     max-width: 620px;
 }
 
-.pm-profile-photo {
+.photo {
     border-radius: 50%;
     border: 3px solid #fff;
     height: @photoDiameter;
@@ -25,21 +25,21 @@
     box-shadow: inset 1px 1px 10px gray;
 }
 
-.pm-profile-header {
+.header {
     display: flex;
     flex-direction: row;
     position: relative;
 }
 
-.pm-profile-header--text {
+.headerText {
     margin-left: 20px;
 }
 
-.pm-profile-name, .pm-profile-job, .pm-profile-location, .pm-profile-tags {
+.name, .job, .location, .tags {
     margin: 5px;
 }
 
-.pm-profile-tags {
+.tags {
 
     padding-left: 0;
     
@@ -47,20 +47,16 @@
         display: inline-block;
         padding: 5px 0;
     }
-
-    .pm-link--tag:first-child {
-        margin-left: 0;
-    }
 }
 
-.pm-profile-sections {
+.sections {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
 }
 
-.pm-profile-socialLinks {
+.socialLinks {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -74,12 +70,12 @@
 
 @media only screen and (max-width: 600px) {
 
-    .pm-profile-content {
+    .content {
         margin-top: 20%;
         text-align: center;
     }
 
-    .pm-profile-header--text {
+    .headerText {
         display: block;
         width: 100%;
         position: relative;
@@ -88,17 +84,17 @@
         padding-top: calc(@photoDiameter/2);
     }
 
-    .pm-profile-sections {
+    .sections {
         flex-direction: column;
     }
 
-    .pm-profile-photo {
+    .photo {
         position: absolute;
         top: calc(-@photoDiameter/2 - 20px);
         left: calc(50% - @photoDiameter/2);
     }
 
-    .pm-profile-socialLinks {
+    .socialLinks {
         display: inline-block;
         width: 100%;
         padding: 0;   

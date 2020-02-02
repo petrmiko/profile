@@ -1,4 +1,4 @@
-import './icon.less'
+import styles from './styles.less'
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -18,7 +18,7 @@ const content = {
 const Icon = React.memo(({ name }) => {
 	const icon = content[name]
 	return icon
-		? <svg className='pm-icon' dangerouslySetInnerHTML={{ __html: icon.svg }}/>
+		? <svg className={styles.icon} dangerouslySetInnerHTML={{ __html: icon.svg }}/>
 		: name
 })
 
