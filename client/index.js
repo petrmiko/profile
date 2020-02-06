@@ -1,5 +1,3 @@
-import 'react-tippy/dist/tippy.css'
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route } from 'react-router'
@@ -14,5 +12,5 @@ ReactDOM.render(
 		<Route exact path='/' component={App} />
 	</Router>
 	,
-	document.getElementById('root')
+	document.getElementById('root'),
 )
