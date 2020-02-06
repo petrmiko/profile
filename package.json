@@ -14,15 +14,13 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "npm run clean && NODE_ENV='production' ./node_modules/.bin/parcel build ./client/index.html --public-url='/static/'",
-    "clean": "rm -rf ./dist && rm -rf ./.cache",
+    "build": "npm run clean && cross-env NODE_ENV='production' ./node_modules/.bin/parcel build ./client/index.html --public-url='/static/'",
+    "clean": "npx rimraf ./dist && npx rimraf ./.cache",
     "dev": "cross-env NODE_ENV='development' npm run server",
-    "flow": "flow",
     "lint": "lint-staged",
     "test": "echo 'Error: no test specified'",
     "server": "node ./server/index",
     "start": "cross-env NODE_ENV='production' npm run server",
-    "heroku-postbuild": "npm run build",
     "gcp-build": "npm run build"
   },
   "lint-staged": {
