@@ -1,5 +1,5 @@
-import styles from './styles.less'
-import linkStyles from '../components/link/styles.less'
+import styles from './content.less'
+import linkStyles from '../components/link/link.less'
 
 import React from 'react'
 import { Tooltip } from 'react-tippy'

@@ -2,7 +2,6 @@ const bodyParser = require('body-parser')
 const compression = require('compression')
 const express = require('express')
 const helmet = require('helmet')
-const serveStatic = require('serve-static')
 
 module.exports = function(config, mainMiddleware) {
 	const mainApp = (() => {
@@ -30,7 +29,7 @@ module.exports = function(config, mainMiddleware) {
 	)
 
 	app.use(mainMiddleware)
-	app.use('/static', serveStatic(config.http.staticPath))
+	app.use('/static', express.static(config.http.staticPath))
 
 	return mainApp
 }

@@ -1,4 +1,4 @@
-import styles from './styles.less'
+import styles from './footer.less'
 
 import React from 'react'
 import Link from '../components/link'
