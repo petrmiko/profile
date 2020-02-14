@@ -38,7 +38,7 @@ const renderSkills = () => {
 			<Tooltip arrow interactive
 				html={
 					<span>
-					Versioning system better others. Because of <Link href='http://effectif.com/git/recovering-lost-git-commits' customClassNames={[linkStyles['link--inverse']]}>reflog</Link>!
+					The best versioning system. Because of <Link href='http://effectif.com/git/recovering-lost-git-commits' customClassNames={[linkStyles['link--inverse']]}>reflog</Link>!
 					</span>
 				}
 				position='bottom'>
@@ -80,7 +80,6 @@ const renderSocial = () => {
 		<li><Link href='https://twitter.com/petrmiko' customClassNames={[linkStyles['link--socialIcon']]}><Icon name='twitter'/></Link></li>
 		<li><Link href='https://linkedin.com/in/petrmiko' customClassNames={[linkStyles['link--socialIcon']]}><Icon name='linkedIn'/></Link></li>
 		<li><Link href='https://github.com/petrmiko' customClassNames={[linkStyles['link--socialIcon']]}><Icon name='github'/></Link></li>
-		<li><Link href='https://open.spotify.com/user/petrmiko' customClassNames={[linkStyles['link--socialIcon']]}><Icon name='spotify'/></Link></li>
 	</ul>
 }
 
