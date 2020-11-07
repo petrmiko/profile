@@ -14,8 +14,9 @@ async function run() {
 
 	console.log(konteiner.getDependencyMap())
 
-	const { address, port } = await httpServer.start(httpServer.getServer())
-	console.log(`Http server started on http://${address}:${port}`)
+	const { address, family, port } = await httpServer.start(httpServer.getServer())
+	const showAddress = family === 'IPv6' && address === '::' ? 'localhost' : address
+	console.log(`Http server started on http://${showAddress}:${port}`)
 	console.log(config)
 }
 

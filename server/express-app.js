@@ -29,7 +29,6 @@ module.exports = function(config, mainMiddleware) {
 	)
 
 	app.use(mainMiddleware)
-	app.use('/static', express.static(config.http.staticPath))
 
 	return mainApp
 }

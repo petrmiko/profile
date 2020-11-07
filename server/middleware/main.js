@@ -4,22 +4,34 @@ const path = require('path')
 module.exports = (config) => {
 	const router = express.Router()
 
-	const getClientMiddleware = function() {
-		if (process.env.NODE_ENV === 'development') {
-			const Bundler = require('parcel-bundler')
-			const parcelBundler = new Bundler(path.join(__dirname, '../../client/index.html'), {
-				watch: true,
-			})
-
-			return parcelBundler.middleware()
+	if (process.env.NODE_ENV !== 'development') {
+		const indexMiddleware = (req, res, next) => {
+			res.sendFile(path.resolve(config.http.staticPath, 'index.html'))
 		}
 
-		return function(req, res, next) {
-			res.sendFile(path.resolve(config.http.staticPath, 'index.html'), null, next)
-		}
+		router.use('/static', express.static(config.http.staticPath))
+		router.get('/', indexMiddleware)
+		router.use((req, res, next) => {
+			indexMiddleware(req, res.status(404), next)
+		})
+	} else {
+		const Bundler = require('parcel-bundler')
+		const parcelBundler = new Bundler(path.join(__dirname, '../../client/index.html'), {
+			watch: true,
+			publicUrl: '/static/',
+		})
+		const parcelMiddleware = parcelBundler.middleware()
+
+		router.get('/', parcelMiddleware)
+		// on dev is static handled by parcel bundler
+		router.use((req, res, next) => {
+			if (!req.originalUrl.startsWith('/static')) {
+				parcelMiddleware(req, res.status(404), next)
+			} else {
+				parcelMiddleware(req, res, next)
+			}
+		})
 	}
-
-	router.get(/^\/(?!static)/, getClientMiddleware())
 
 	return router
 }
