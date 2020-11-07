@@ -2,8 +2,8 @@ import styles from './app.less'
 
 import React, { useEffect } from 'react'
 
-import Content from './content/content'
-import Footer from './footer/footer'
+import Content from '../content'
+import Footer from '../footer'
 
 const App = () => {
 	useEffect(() => {
@@ -15,7 +15,5 @@ const App = () => {
 		<Footer />
 	</div>
 }
-
-App.displayName = 'App'
 
 export default App

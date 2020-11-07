@@ -1,11 +1,11 @@
 import styles from './content.less'
-import linkStyles from '../components/link/link.less'
+import linkStyles from '../shared/link/link.less'
 
 import React from 'react'
 import { Tooltip } from 'react-tippy'
 
-import Link from '../components/link'
-import Icon from '../components/icon'
+import Link from '../shared/link'
+import Icon from '../shared/icon'
 
 const renderSkills = () => {
 	return <ul className={styles.tags}>
@@ -13,7 +13,7 @@ const renderSkills = () => {
 			<Tooltip arrow interactive
 				html={
 					<span>
-					JS runtime outside of browser. Using <Link href='https://expressjs.com/' customClassNames={[linkStyles['link--inverse']]}>Express</Link> for server!
+						JS runtime outside of browser. Using <Link href='https://expressjs.com/' customClassNames={[linkStyles['link--inverse']]}>Express</Link> for server!
 					</span>
 				}
 				position='bottom'>
@@ -38,7 +38,7 @@ const renderSkills = () => {
 			<Tooltip arrow interactive
 				html={
 					<span>
-					The best versioning system. Because of <Link href='http://effectif.com/git/recovering-lost-git-commits' customClassNames={[linkStyles['link--inverse']]}>reflog</Link>!
+						The best versioning system. Because of <Link href='http://effectif.com/git/recovering-lost-git-commits' customClassNames={[linkStyles['link--inverse']]}>reflog</Link>!
 					</span>
 				}
 				position='bottom'>
@@ -91,5 +91,4 @@ const Content = () => {
 	</div>
 }
 
-Content.displayName = 'Content'
 export default Content

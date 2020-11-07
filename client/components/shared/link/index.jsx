@@ -4,7 +4,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-const Link = React.memo((props) => {
+const Link = (props) => {
 	const { children, customClassNames, disabled, href, isRelative, ...rest } = props
 	const cls = cx(styles.link, { [styles['link--disabled']]: disabled }, customClassNames)
 
@@ -15,9 +15,7 @@ const Link = React.memo((props) => {
 	return isRelative
 		? <a href={href} className={cls} {...rest}>{children}</a>
 		: <a href={href} className={cls} target='_blank' rel='noopener noreferrer' {...rest}>{children}</a>
-})
-
-Link.displayName = 'Link'
+}
 
 Link.propTypes = {
 	children: PropTypes.any,
@@ -33,4 +31,4 @@ Link.defaultProps = {
 	disabled: false,
 }
 
-export default Link
+export default React.memo(Link)

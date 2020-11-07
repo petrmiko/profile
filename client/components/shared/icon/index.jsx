@@ -15,17 +15,15 @@ const content = {
 	spotify: SpotifyIcon,
 }
 
-const Icon = React.memo(({ name }) => {
+const Icon = ({ name }) => {
 	const icon = content[name]
 	return icon
 		? <svg className={styles.icon} dangerouslySetInnerHTML={{ __html: icon.svg }}/>
 		: name
-})
-
-Icon.displayName = 'Icon'
+}
 
 Icon.propTypes = {
 	name: PropTypes.string.isRequired,
 }
 
-export default Icon
+export default React.memo(Icon)

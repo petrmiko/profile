@@ -1,7 +1,7 @@
 import styles from './footer.less'
 
 import React from 'react'
-import Link from '../components/link'
+import Link from '../shared/link'
 
 const Footer = () => {
 	return <div className={styles.footer}>
@@ -12,7 +12,5 @@ const Footer = () => {
 		</ul>
 	</div>
 }
-
-Footer.displayName = 'Footer'
 
 export default Footer
