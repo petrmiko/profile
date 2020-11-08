@@ -53,7 +53,7 @@ const renderHeader = () => {
 		<div className={styles.photo}/>
 		<div className={styles.headerText}>
 			<h1 className={styles.name}>Petr Miko</h1>
-			<h2 className={styles.job}>Developer @ Socialbakers</h2>
+			<h2 className={styles.job}>JavaScript Developer</h2>
 			<h3 className={styles.location}>Pilsen, Czech Republic</h3>
 			{renderSkills()}
 		</div>

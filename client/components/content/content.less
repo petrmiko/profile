@@ -1,4 +1,5 @@
-@photoDiameter: 100px;
+@photoDiameter: 300px;
+@photoDiameter-narrow: 120px;
 
 .content {
     display: block;
@@ -22,21 +23,32 @@
     background-repeat: no-repeat;
     background-image: url('../../assets/photo.jpg');
     background-size: @photoDiameter @photoDiameter;
-    box-shadow: inset 1px 1px 10px gray;
 }
 
 .header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     position: relative;
+    align-items: center;
 }
 
 .headerText {
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.name, .job, .location, .tags {
-    margin: 5px;
+h1.name {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 60px;
+}
+
+h2.job {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 40px;
 }
 
 .tags {
@@ -75,23 +87,20 @@
         text-align: center;
     }
 
-    .headerText {
-        display: block;
-        width: 100%;
-        position: relative;
-        padding-left: 0;
-        margin: 0;
-        padding-top: calc(@photoDiameter/2);
-    }
-
     .sections {
         flex-direction: column;
     }
 
     .photo {
-        position: absolute;
-        top: calc(-@photoDiameter/2 - 20px);
-        left: calc(50% - @photoDiameter/2);
+        height: @photoDiameter-narrow;
+        width: @photoDiameter-narrow;
+        background-size: @photoDiameter-narrow @photoDiameter-narrow;
+    }
+
+    h2.job {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 30px;
     }
 
     .socialLinks {
