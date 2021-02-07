@@ -3,7 +3,10 @@ const compression = require('compression')
 const express = require('express')
 const helmet = require('helmet')
 
-module.exports = function(config, mainMiddleware) {
+const MainMiddleware = require('./middleware/main')
+
+module.exports = /** @param {import('@petrmiko/konteiner') konteiner} */function(konteiner) {
+	const mainMiddleware = konteiner.get(MainMiddleware)
 	const mainApp = (() => {
 		const app = express()
 		app.use(helmet())

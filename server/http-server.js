@@ -1,7 +1,11 @@
 const http = require('http')
+const config = require('../config')
 
-module.exports = (config, expressApp) => ({
+const ExpressApp = require('./express-app')
+
+module.exports = /** @param {import('@petrmiko/konteiner') konteiner} */ (konteiner) => ({
 	getServer() {
+		const expressApp = konteiner.get(ExpressApp)
 		return http.createServer(expressApp)
 	},
 

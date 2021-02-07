@@ -1,7 +1,8 @@
 const express = require('express')
 const path = require('path')
+const config = require('../../config')
 
-module.exports = (config) => {
+module.exports = () => {
 	const router = express.Router()
 
 	if (process.env.NODE_ENV !== 'development') {
