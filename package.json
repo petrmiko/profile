@@ -11,8 +11,8 @@
     "url": "git+ssh://git@github.com:petrmiko/profile.git"
   },
   "engines": {
-    "node": ">=12",
-    "npm": "6.14.8"
+    "node": ">=14",
+    "npm": "6.14.10"
   },
   "scripts": {
     "build": "npm run clean && cross-env NODE_ENV='production' ./node_modules/.bin/parcel build ./client/index.html --public-url='/static/'",
