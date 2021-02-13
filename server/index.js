@@ -16,7 +16,15 @@ async function run() {
 	const showAddress = family === 'IPv6' && address === '::' ? 'localhost' : address
 	console.log(`Http server started on http://${showAddress}:${port}`)
 	console.log(config)
-	console.dir(konteiner.getDependencyMap(), { depth: null })
+	console.dir(Array.from(konteiner.getDependencyMap().values(), (ref) => {
+		const { instance, dependencies, ...refRest } = ref
+		return {
+			...refRest,
+			dependencies: Array.from(dependencies, (ref) => ({
+				name: ref.name, path: ref.path,
+			})),
+		}
+	}), { depth: null })
 }
 
 run().catch(err => {
