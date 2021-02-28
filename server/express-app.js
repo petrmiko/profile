@@ -4,12 +4,24 @@ const express = require('express')
 const helmet = require('helmet')
 
 const MainMiddleware = require('./middleware/main')
+const config = require('../config')
 
 module.exports = /** @param {import('@petrmiko/konteiner') konteiner} */function(konteiner) {
 	const mainMiddleware = konteiner.get(MainMiddleware)
 	const mainApp = (() => {
 		const app = express()
-		app.use(helmet())
+		app.use(helmet({
+			contentSecurityPolicy: {
+				directives: {
+					defaultSrc: ['\'self\''],
+					scriptSrc: ['\'self\'', '\'unsafe-inline\'', config.allowGoogleAnalytics && 'https://www.googletagmanager.com', config.allowGoogleAnalytics && 'https://www.google-analytics.com'].filter(Boolean),
+					styleSrc: ['\'self\'', 'https://fonts.googleapis.com'],
+					connectSrc: ['\'self\'', 'ws://localhost:*', config.allowGoogleAnalytics && 'https://www.google-analytics.com', config.allowGoogleAnalytics && 'https://stats.g.doubleclick.net'].filter(Boolean),
+					fontSrc: ['\'self\'', 'https://fonts.gstatic.com'],
+					imgSrc: ['\'self\'', 'data:', config.allowGoogleAnalytics && 'https://www.google-analytics.com'].filter(Boolean),
+				},
+			},
+		}))
 		app.use(compression())
 
 		app.enable('trust proxy')
