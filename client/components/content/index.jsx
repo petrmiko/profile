@@ -64,7 +64,7 @@ const renderSections = () => {
 	return <div className={styles.sections}>
 		<div>
 			<h3>Work</h3>
-			<Link href='https://www.socialbakers.com/'>Socialbakers a.s.</Link>
+			<Link href='https://emplifi.io/'>Emplifi</Link>
 		</div>
 
 		<div>
