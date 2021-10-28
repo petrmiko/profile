@@ -17,7 +17,7 @@ const App = () => {
 			{config.siteAuthor && <meta name='author' content={config.siteAuthor}/>}
 			{config.siteKeywords && <meta name='keywords' content={config.siteKeywords}/>}
 		</Helmet>
-		{config.googleAnalyticsId && <GoogleAnalytics uid={config.googleAnalyticsId}/>}
+		{config.googleAnalyticsId && !config.isDev && <GoogleAnalytics uid={config.googleAnalyticsId}/>}
 		<Content />
 		<Footer />
 	</div>

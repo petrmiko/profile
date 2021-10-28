@@ -5,7 +5,19 @@ const config = require('../../config')
 module.exports = () => {
 	const router = express.Router()
 
-	if (process.env.NODE_ENV !== 'development') {
+	if (config.isDevMode) {
+		const devMiddlewareFactory = require('webpack-dev-middleware')
+		const hotMiddlewareFactory = require('webpack-hot-middleware')
+		const webpack = require('webpack')
+		const webpackConfig = require('../../client/build/webpack.config')
+
+		const compiler = webpack(webpackConfig)
+
+		router.use(devMiddlewareFactory(compiler))
+		router.use(hotMiddlewareFactory(compiler, {
+			heartbeat: 1000,
+		}))
+	} else {
 		const indexMiddleware = (req, res, next) => {
 			res.sendFile(path.resolve(config.http.staticPath, 'index.html'))
 		}
@@ -14,23 +26,6 @@ module.exports = () => {
 		router.get('/', indexMiddleware)
 		router.use((req, res, next) => {
 			indexMiddleware(req, res.status(404), next)
-		})
-	} else {
-		const Bundler = require('parcel-bundler')
-		const parcelBundler = new Bundler(path.join(__dirname, '../../client/index.html'), {
-			watch: true,
-			publicUrl: '/static/',
-		})
-		const parcelMiddleware = parcelBundler.middleware()
-
-		router.get('/', parcelMiddleware)
-		// on dev is static handled by parcel bundler
-		router.use((req, res, next) => {
-			if (!req.originalUrl.startsWith('/static')) {
-				parcelMiddleware(req, res.status(404), next)
-			} else {
-				parcelMiddleware(req, res, next)
-			}
 		})
 	}
 

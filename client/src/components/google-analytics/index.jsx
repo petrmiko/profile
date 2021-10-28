@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 const GoogleAnalytics = ({ uid }) => {
 	return <Helmet>
 		<script async src={`https://www.googletagmanager.com/gtag/js?id=${uid}`} />
-		<script>
+		<script crossorigin='anonymous'>
 			{`
 				window.dataLayer = window.dataLayer || [];
 				function gtag(){ dataLayer.push(arguments); }

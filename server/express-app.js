@@ -14,8 +14,19 @@ module.exports = /** @param {import('@petrmiko/konteiner') konteiner} */function
 			contentSecurityPolicy: {
 				directives: {
 					defaultSrc: ['\'self\''],
-					scriptSrc: ['\'self\'', '\'unsafe-inline\'', config.allowGoogleAnalytics && 'https://www.googletagmanager.com', config.allowGoogleAnalytics && 'https://www.google-analytics.com'].filter(Boolean),
-					styleSrc: ['\'self\'', 'https://fonts.googleapis.com'],
+					scriptSrc: [
+						'\'self\'',
+						'\'unsafe-inline\'',
+						config.isDevMode && '\'unsafe-eval\'',
+						config.allowGoogleAnalytics && 'https://www.googletagmanager.com',
+						config.allowGoogleAnalytics && 'https://www.google-analytics.com',
+						config.allowGoogleAnalytics && 'https://stats.g.doubleclick.net',
+					].filter(Boolean),
+					styleSrc: [
+						'\'self\'',
+						config.isDevMode && '\'unsafe-inline\'',
+						'https://fonts.googleapis.com',
+					].filter(Boolean),
 					connectSrc: ['\'self\'', 'ws://localhost:*', config.allowGoogleAnalytics && 'https://www.google-analytics.com', config.allowGoogleAnalytics && 'https://stats.g.doubleclick.net'].filter(Boolean),
 					fontSrc: ['\'self\'', 'https://fonts.gstatic.com'],
 					imgSrc: ['\'self\'', 'data:', config.allowGoogleAnalytics && 'https://www.google-analytics.com'].filter(Boolean),
