@@ -70,7 +70,7 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			inject: true,
-			template: path.resolve(SRC_DIR, 'index.html'),
+			template: path.resolve(SRC_DIR, 'index.ejs'),
 			favicon: path.resolve(ASSETS_DIR, 'favicon-32x32.png'),
 			publicPath: IS_DEV_MODE ? '/' : 'static/',
 		}),
