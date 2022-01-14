@@ -1,5 +1,3 @@
-import styles from './app.less'
-
 import React from 'react'
 
 import Content from '../content'
@@ -9,7 +7,7 @@ import config from '../../config'
 import GoogleAnalytics from '../google-analytics'
 
 const App = () => {
-	return <div className={styles.app}>
+	return <div className='flex flex-col h-screen justify-between'>
 		{config.googleAnalyticsId && !config.isDev && <GoogleAnalytics uid={config.googleAnalyticsId}/>}
 		<Content />
 		<Footer />

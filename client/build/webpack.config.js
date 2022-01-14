@@ -27,31 +27,19 @@ module.exports = {
 				use: ['babel-loader'],
 			},
 			{
-				test: /\.css$/i,
+				test: /\.(c|le)ss$/i,
 				use: [
 					IS_DEV_MODE ? 'style-loader' : MiniCssExtractPlugin.loader,
 					'css-loader',
+					'postcss-loader',
 				],
 			},
 			{
-				test: /\.less$/i,
+				test: /\.(png|jpe?g|gif)$/i,
 				use: [
-					IS_DEV_MODE
-						? 'style-loader'
-						: {
-							loader: MiniCssExtractPlugin.loader,
-							options: {
-								publicPath: IS_DEV_MODE ? '/' : '/static/',
-							},
-						},
 					{
-						loader: 'css-loader',
-						options: {
-							importLoaders: 1,
-							modules: true,
-						},
+						loader: 'file-loader',
 					},
-					'less-loader',
 				],
 			},
 		],

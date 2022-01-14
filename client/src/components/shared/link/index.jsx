@@ -1,15 +1,15 @@
-import styles from './link.less'
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
+import './link.less'
+
 const Link = (props) => {
-	const { children, customClassNames, disabled, href, isRelative, ...rest } = props
-	const cls = cx(styles.link, { [styles['link--disabled']]: disabled }, customClassNames)
+	const { children, className, disabled, href, isRelative, ...rest } = props
+	const cls = cx(className)
 
 	if (disabled) {
-		return <div className={cls} {...rest}>{children}</div>
+		return <div className={className} {...rest}>{children}</div>
 	}
 
 	return isRelative
@@ -19,14 +19,14 @@ const Link = (props) => {
 
 Link.propTypes = {
 	children: PropTypes.any,
-	customClassNames: PropTypes.arrayOf(PropTypes.string),
+	className: PropTypes.string,
 	disabled: PropTypes.bool,
 	href: PropTypes.string.isRequired,
 	isRelative: PropTypes.bool,
 }
 
 Link.defaultProps = {
-	customClassNames: [],
+	className: 'underline hover:no-underline',
 	isRelative: false,
 	disabled: false,
 }
