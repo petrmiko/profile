@@ -1,3 +1,4 @@
+import './main.css'
 import 'react-tippy/dist/tippy.css'
 
 import React from 'react'
