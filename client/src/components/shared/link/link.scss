@@ -1,0 +1,33 @@
+.link--tag {
+    @apply 
+        inline-block
+        mx-2 my-1
+        px-2 py-1
+        font-mono
+        text-xs 
+        rounded-md
+        border-black border-solid border
+        transform transition duration-200
+        first:ml-0
+
+        hover:bg-gray-400 
+        hover:border-gray-400
+        hover:text-white
+        hover:scale-110
+    ;
+}
+
+.link--socialIcon {
+    @apply
+        inline-flex
+        rounded-full
+        m-4
+        p-4
+        fill-gray-400
+        transform transition duration-200
+
+        hover:bg-gray-400 
+        hover:fill-white
+        hover:scale-110
+    ;
+}

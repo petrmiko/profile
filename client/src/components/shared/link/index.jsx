@@ -1,7 +1,7 @@
 import { forwardRef, memo } from 'react'
 import PropTypes from 'prop-types'
 
-import './link.less'
+import './link.scss'
 
 const Link = forwardRef((props, ref) => {
 	const { children, className, disabled, href, isRelative, ...rest } = props

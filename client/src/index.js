@@ -1,4 +1,4 @@
-import './main.css'
+import './main.scss'
 import 'tippy.js/dist/tippy.css'
 
 import ReactDOM from 'react-dom'
