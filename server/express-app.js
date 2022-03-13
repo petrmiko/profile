@@ -11,7 +11,9 @@ module.exports = /** @param {import('@petrmiko/konteiner') konteiner} */function
 	const mainApp = (() => {
 		const app = express()
 		app.use(helmet({
+			frameguard: !config.isDevMode,
 			contentSecurityPolicy: {
+				useDefaults: false,
 				directives: {
 					defaultSrc: ['\'self\''],
 					scriptSrc: [
