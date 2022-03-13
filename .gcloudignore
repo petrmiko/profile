@@ -3,6 +3,7 @@
 .gitignore
 
 .cache
+.husky
 node_modules/
 dist/
 Procfile
