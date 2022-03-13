@@ -4,6 +4,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const ASSETS_DIR = path.resolve(__dirname, '..', 'assets')
 const SRC_DIR = path.resolve(__dirname, '..', 'src')
@@ -15,7 +16,10 @@ const MODE = IS_DEV_MODE ? 'development' : 'production'
 console.log('Packaging app in mode', MODE)
 
 module.exports = {
-	entry: path.resolve(SRC_DIR, 'index.js'),
+	entry: [
+		path.resolve(SRC_DIR, 'index.js'),
+		IS_DEV_MODE && 'webpack-hot-middleware/client',
+	].filter(Boolean),
 	devtool: IS_DEV_MODE ? 'inline-source-map' : undefined,
 	mode: MODE,
 	target: 'web',
@@ -24,7 +28,14 @@ module.exports = {
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				use: ['babel-loader'],
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							plugins: [IS_DEV_MODE && 'react-refresh/babel'].filter(Boolean),
+						},
+					},
+				],
 			},
 			{
 				test: /\.(c|le)ss$/i,
@@ -63,6 +74,7 @@ module.exports = {
 			publicPath: IS_DEV_MODE ? '/' : 'static/',
 		}),
 		IS_DEV_MODE && new webpack.HotModuleReplacementPlugin(),
+		IS_DEV_MODE && new ReactRefreshWebpackPlugin(),
 	].filter(Boolean),
 	resolve: {
 		extensions: ['.less', '.js', '.jsx'],

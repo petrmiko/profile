@@ -16,9 +16,7 @@ module.exports = () => {
 
 		router.use(history())
 		router.use(devMiddlewareFactory(compiler))
-		router.use(hotMiddlewareFactory(compiler, {
-			heartbeat: 1000,
-		}))
+		router.use(hotMiddlewareFactory(compiler))
 	} else {
 		const indexMiddleware = (req, res, next) => {
 			res.sendFile(path.resolve(config.http.staticPath, 'index.html'))
