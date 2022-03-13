@@ -6,6 +6,7 @@ module.exports = () => {
 	const router = express.Router()
 
 	if (config.isDevMode) {
+		const history = require('connect-history-api-fallback')
 		const devMiddlewareFactory = require('webpack-dev-middleware')
 		const hotMiddlewareFactory = require('webpack-hot-middleware')
 		const webpack = require('webpack')
@@ -13,6 +14,7 @@ module.exports = () => {
 
 		const compiler = webpack(webpackConfig)
 
+		router.use(history())
 		router.use(devMiddlewareFactory(compiler))
 		router.use(hotMiddlewareFactory(compiler, {
 			heartbeat: 1000,

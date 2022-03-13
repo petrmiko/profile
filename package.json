@@ -40,6 +40,7 @@
     "@babel/preset-react": "^7.16.7",
     "@icons-pack/react-simple-icons": "^4.6.1",
     "babel-loader": "^8.2.3",
+    "connect-history-api-fallback": "^1.6.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
