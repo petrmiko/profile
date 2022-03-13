@@ -46,7 +46,7 @@ const renderSkills = () => {
 
 const renderHeader = () => {
 	return <div className='flex flex-col w-full align-middle'>
-		<img className='rounded-full self-center scale-75 md:scale-100 transform transition' src={photo} alt='' width={256} height={256} />
+		<img className='rounded-full self-center scale-75 md:scale-100 transform transition md:mb-6' src={photo} alt='' width={256} height={256} />
 		<div className='text-center space-y-4'>
 			<h1 className='text-5xl font-medium'>Petr Miko</h1>
 			<h2 className='text-4xl font-medium'>JavaScript Developer</h2>
@@ -72,7 +72,7 @@ const renderSections = () => {
 }
 
 const renderSocial = () => {
-	return <ul className='flex p-10 list-none md:space-x-20'>
+	return <ul className='flex list-none md:space-x-20'>
 		<li>
 			<Tippy arrow={false} placement='bottom' content='Twitter Account'>
 				<Link href='https://twitter.com/petrmiko' className='link--socialIcon'>
