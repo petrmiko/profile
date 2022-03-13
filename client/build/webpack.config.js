@@ -65,7 +65,7 @@ module.exports = {
 		IS_DEV_MODE && new webpack.HotModuleReplacementPlugin(),
 	].filter(Boolean),
 	resolve: {
-		extensions: ['*', '.js', '.jsx'],
+		extensions: ['.less', '.js', '.jsx'],
 	},
 	optimization: {
 		minimize: MODE === 'production',

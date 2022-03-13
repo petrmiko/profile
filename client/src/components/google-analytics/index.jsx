@@ -1,5 +1,4 @@
 import { string } from 'prop-types'
-import React from 'react'
 import { Helmet } from 'react-helmet'
 
 const GoogleAnalytics = ({ uid }) => {
