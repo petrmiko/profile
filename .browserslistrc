@@ -1,6 +1,5 @@
 [production staging]
-> 1%
-ie 10
+defaults
 
 [development]
 last 2 chrome version
