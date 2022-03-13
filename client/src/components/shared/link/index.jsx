@@ -1,19 +1,21 @@
-import { memo } from 'react'
+import { forwardRef, memo } from 'react'
 import PropTypes from 'prop-types'
 
 import './link.less'
 
-const Link = (props) => {
+const Link = forwardRef((props, ref) => {
 	const { children, className, disabled, href, isRelative, ...rest } = props
 
 	if (disabled) {
-		return <div className={className} {...rest}>{children}</div>
+		return <div ref={ref} className={className} {...rest}>{children}</div>
 	}
 
 	return isRelative
-		? <a href={href} className={className} {...rest}>{children}</a>
-		: <a href={href} className={className} target='_blank' rel='noopener noreferrer' {...rest}>{children}</a>
-}
+		? <a ref={ref} href={href} className={className} {...rest}>{children}</a>
+		: <a ref={ref} href={href} className={className} target='_blank' rel='noopener noreferrer' {...rest}>{children}</a>
+})
+
+Link.displayName = 'Link'
 
 Link.propTypes = {
 	children: PropTypes.any,

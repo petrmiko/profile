@@ -1,4 +1,4 @@
-import { Tooltip } from 'react-tippy'
+import Tippy from '@tippyjs/react'
 
 import Link from '../shared/link'
 import { Twitter, Linkedin, Github } from '@icons-pack/react-simple-icons'
@@ -10,40 +10,40 @@ const LINK_ICON_SIZE = 44
 const renderSkills = () => {
 	return <ul className='inline-flex list-none space-x-5'>
 		<li>
-			<Tooltip arrow interactive
-				html={
+			<Tippy arrow interactive
+				content={
 					<span>
 						JS runtime outside of browser. Using <Link href='https://expressjs.com/'>Express</Link> for server!
 					</span>
 				}
-				position='bottom'>
+				placement='bottom'>
 				<Link href='https://nodejs.org' className='link--tag'>NodeJS</Link>
-			</Tooltip>
+			</Tippy>
 		</li>
 		<li>
-			<Tooltip arrow
-				title='JS frontend framework by Facebook'
-				position='bottom'>
+			<Tippy arrow
+				content='JS frontend framework by Facebook'
+				placement='bottom'>
 				<Link href='https://reactjs.org' className='link--tag'>React</Link>
-			</Tooltip>
+			</Tippy>
 		</li>
 		<li>
-			<Tooltip arrow
-				title='Keeping application state outside of React components'
-				position='bottom'>
+			<Tippy arrow
+				content='Keeping application state outside of React components'
+				placement='bottom'>
 				<Link href='https://redux.js.org' className='link--tag'>Redux</Link>
-			</Tooltip>
+			</Tippy>
 		</li>
 		<li>
-			<Tooltip arrow interactive
-				html={
+			<Tippy arrow interactive
+				content={
 					<span>
 						The best versioning system. Because of <Link href='http://effectif.com/git/recovering-lost-git-commits'>reflog</Link>!
 					</span>
 				}
-				position='bottom'>
+				placement='bottom'>
 				<Link href='https://git-scm.com' className='link--tag'>Git</Link>
-			</Tooltip>
+			</Tippy>
 		</li>
 	</ul>
 }

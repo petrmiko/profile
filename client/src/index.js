@@ -1,5 +1,5 @@
 import './main.css'
-import 'react-tippy/dist/tippy.css'
+import 'tippy.js/dist/tippy.css'
 
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
