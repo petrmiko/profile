@@ -62,7 +62,7 @@ const renderHeader = () => {
 }
 
 const renderSections = () => {
-	return <div className='flex flex-col md:flex-row w-96 justify-between space-y-5 text-center'>
+	return <div className='flex flex-col md:flex-row w-96 justify-between space-y-5 md:space-y-0 text-center'>
 		<div className='text-sm'>
 			<h3 className='text-base font-bold'>Work</h3>
 			<Link href='https://emplifi.io/'>Emplifi</Link>
@@ -78,9 +78,21 @@ const renderSections = () => {
 
 const renderSocial = () => {
 	return <ul className='flex p-10 list-none md:space-x-20'>
-		<li><Link href='https://twitter.com/petrmiko' className='link--socialIcon'><Twitter size={LINK_ICON_SIZE} color='inherit'/></Link></li>
-		<li><Link href='https://linkedin.com/in/petrmiko' className='link--socialIcon'><Linkedin size={LINK_ICON_SIZE} color='inherit'/></Link></li>
-		<li><Link href='https://github.com/petrmiko' className='link--socialIcon'><Github size={LINK_ICON_SIZE} color='inherit'/></Link></li>
+		<li>
+			<Link title='Twitter Account' href='https://twitter.com/petrmiko' className='link--socialIcon'>
+				<Twitter title='' size={LINK_ICON_SIZE} color='inherit'/>
+			</Link>
+		</li>
+		<li>
+			<Link title='LinkedIn Account' href='https://linkedin.com/in/petrmiko' className='link--socialIcon'>
+				<Linkedin title='' size={LINK_ICON_SIZE} color='inherit'/>
+			</Link>
+		</li>
+		<li>
+			<Link title='GitHub Profile' href='https://github.com/petrmiko' className='link--socialIcon'>
+				<Github title='' size={LINK_ICON_SIZE} color='inherit'/>
+			</Link>
+		</li>
 	</ul>
 }
 
