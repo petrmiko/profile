@@ -1,0 +1,19 @@
+{
+    "city": "Pilsen",
+    "country": "Czech Republic",
+    "header-job": "Work",
+    "title-job": "JavaScript Developer",
+    "header-education": "Education",
+    "title-education": "Software Engineer",
+    "place-education": "University of West Bohemia",
+    "url-education": "https://www.zcu.cz/en/",
+    "tooltip-nodejs": "JS runtime outside of browser. Using <1>Express</1> for server!",
+    "tooltip-git": "The best versioning system. Because of <1>reflog</1>!",
+    "tooltip-github": "GitHub Profile",
+    "tooltip-linkedin": "LinkedIn Profile",
+    "tooltip-react": "JS frontend framework by Facebook",
+    "tooltip-redux": "Keeping application state outside of React components",
+    "tooltip-twitter": "Twitter Account",
+    "source-code": "Source Code",
+    "icons-from": "Icons from Simple Icons"
+}
