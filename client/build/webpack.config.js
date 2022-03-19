@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const ASSETS_DIR = path.resolve(__dirname, '..', 'assets')
@@ -19,10 +18,17 @@ const MODE = IS_DEV_MODE ? 'development' : 'production'
 console.log('Packaging app in mode', MODE)
 
 module.exports = {
-	entry: [
-		path.resolve(SRC_DIR, 'index.js'),
-		IS_DEV_MODE && 'webpack-hot-middleware/client',
-	].filter(Boolean),
+	entry: {
+		index:
+			{
+				import: [
+					path.resolve(SRC_DIR, 'index.js'),
+					IS_DEV_MODE && 'webpack-hot-middleware/client',
+				].filter(Boolean),
+				dependOn: ['react'],
+			},
+		react: ['react', 'react-dom'],
+	},
 	devtool: IS_DEV_MODE ? 'inline-source-map' : undefined,
 	mode: MODE,
 	target: 'web',
@@ -74,6 +80,7 @@ module.exports = {
 		}),
 		IS_DEV_MODE && new webpack.HotModuleReplacementPlugin(),
 		IS_DEV_MODE && new ReactRefreshWebpackPlugin(),
+		new webpack.ProgressPlugin(),
 	].filter(Boolean),
 	resolve: {
 		extensions: ['.less', '.js', '.jsx'],
@@ -81,7 +88,7 @@ module.exports = {
 	optimization: {
 		minimize: MODE === 'production',
 		minimizer: [
-			new TerserPlugin(),
+			'...', // default Webpack minifications
 			new CssMinimizerPlugin({
 				minimizerOptions: {
 					preset: [
@@ -107,7 +114,7 @@ module.exports = {
 		],
 	},
 	output: {
-		filename: 'main.js',
+		filename: '[name].js',
 		path: DIST_DIR,
 		publicPath: IS_DEV_MODE ? '/' : 'static/',
 	},
