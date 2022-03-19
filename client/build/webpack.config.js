@@ -5,6 +5,9 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const ASSETS_DIR = path.resolve(__dirname, '..', 'assets')
 const SRC_DIR = path.resolve(__dirname, '..', 'src')
@@ -47,11 +50,7 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpe?g|gif)$/i,
-				use: [
-					{
-						loader: 'file-loader',
-					},
-				],
+				type: 'asset/resource',
 			},
 		],
 	},
@@ -81,6 +80,31 @@ module.exports = {
 	},
 	optimization: {
 		minimize: MODE === 'production',
+		minimizer: [
+			new TerserPlugin(),
+			new CssMinimizerPlugin({
+				minimizerOptions: {
+					preset: [
+						'default',
+						{
+							discardComments: { removeAll: true },
+						},
+					],
+				},
+			}),
+			new ImageMinimizerPlugin({
+				minimizer: {
+					implementation: ImageMinimizerPlugin.squooshMinify,
+					options: {
+						encodeOptions: {
+							mozjpeg: {
+								quality: 80,
+							},
+						},
+					},
+				},
+			}),
+		],
 	},
 	output: {
 		filename: 'main.js',
