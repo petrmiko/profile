@@ -19,15 +19,10 @@ console.log('Packaging app in mode', MODE)
 
 module.exports = {
 	entry: {
-		index:
-			{
-				import: [
-					path.resolve(SRC_DIR, 'index.js'),
-					IS_DEV_MODE && 'webpack-hot-middleware/client',
-				].filter(Boolean),
-				dependOn: ['react'],
-			},
-		react: ['react', 'react-dom'],
+		index: [
+			path.resolve(SRC_DIR, 'index.js'),
+			IS_DEV_MODE && 'webpack-hot-middleware/client',
+		].filter(Boolean),
 	},
 	devtool: IS_DEV_MODE ? 'inline-source-map' : undefined,
 	mode: MODE,
@@ -47,7 +42,7 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(c|sc)ss$/i,
+				test: /\.(c|sc)ss$/,
 				use: [
 					IS_DEV_MODE ? 'style-loader' : MiniCssExtractPlugin.loader,
 					'css-loader',
@@ -55,7 +50,7 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(png|jpe?g|gif)$/i,
+				test: /\.(png|jpe?g|gif)$/,
 				type: 'asset/resource',
 			},
 		],
@@ -112,9 +107,24 @@ module.exports = {
 				},
 			}),
 		],
+		splitChunks: {
+			chunks: 'all',
+			cacheGroups: {
+				react: {
+					test: /[\\/]node_modules[\\/](react|react-dom|prop-types)[\\/]/,
+					name: 'react-vendor',
+				},
+				default: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'other-vendors',
+					reuseExistingChunk: true,
+				},
+			},
+		},
 	},
 	output: {
 		filename: '[name].js',
+		assetModuleFilename: 'assets/[name][ext]',
 		path: DIST_DIR,
 		publicPath: IS_DEV_MODE ? '/' : 'static/',
 	},
