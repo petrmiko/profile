@@ -108,16 +108,19 @@ module.exports = {
 			}),
 		],
 		splitChunks: {
-			chunks: 'all',
 			cacheGroups: {
 				react: {
 					test: /[\\/]node_modules[\\/](react|react-dom|prop-types)[\\/]/,
+					chunks: 'all',
 					name: 'react-vendor',
+					priority: -10,
 				},
 				default: {
 					test: /[\\/]node_modules[\\/]/,
+					chunks: 'all',
 					name: 'other-vendors',
 					reuseExistingChunk: true,
+					priority: -20,
 				},
 			},
 		},
