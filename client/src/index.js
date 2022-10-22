@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
-import i18n from 'i18next'
+import { use as i18nUse } from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
 import App from './components/app'
@@ -13,8 +13,7 @@ import NotFound from './components/not-found'
 import czech from './components/languages/translations/cz.json'
 import english from './components/languages/translations/en.json'
 
-i18n
-	.use(initReactI18next) // passes i18n down to react-i18next
+i18nUse(initReactI18next) // passes i18n down to react-i18next
 	.init({
 		resources: {
 			cz: { translation: czech },

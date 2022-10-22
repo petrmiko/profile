@@ -1,20 +1,29 @@
 {
     "extends": [
         "eslint-config-standard",
+        "plugin:import/recommended",
         "plugin:react/recommended",
-        "plugin:react/jsx-runtime"
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended"
     ],
     "plugins": [
-        "babel",
         "react",
         "react-hooks"
     ],
     "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx"]
+            }
+        },
         "react": {
             "version": "detect"
         }
     },
     "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false
+    },
     "rules": {
         "comma-dangle": ["error", "always-multiline"],
         "eol-last": ["error", "always"],
