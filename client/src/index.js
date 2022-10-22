@@ -1,7 +1,7 @@
 import './main.scss'
 import 'tippy.js/dist/tippy.css'
 
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import i18n from 'i18next'
@@ -29,8 +29,9 @@ i18n
 	})
 
 const history = createBrowserHistory()
+const root = createRoot(document.getElementById('root'))
 
-ReactDOM.render(
+root.render(
 	<BrowserRouter history={history}>
 		<Routes>
 			<Route path='/'>
@@ -42,7 +43,4 @@ ReactDOM.render(
 				/>
 			</Route>
 		</Routes>
-	</BrowserRouter>
-	,
-	document.getElementById('root'),
-)
+	</BrowserRouter>)
