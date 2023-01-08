@@ -1,7 +1,12 @@
 import { forwardRef, memo } from 'react'
 import PropTypes from 'prop-types'
 
-import './link.scss'
+import style from './link.module.scss'
+
+export const VARIANT_CLASS = {
+	TAG: style.tag,
+	SOCIAL_ICON: style.socialIcon,
+}
 
 const Link = forwardRef((props, ref) => {
 	const { children, className, disabled, href, isRelative, ...rest } = props

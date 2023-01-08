@@ -1,10 +1,10 @@
-const path = require('path')
-
-module.exports = {
-	isDevMode: process.env.NODE_ENV === 'development',
-	allowGoogleAnalytics: !!process.env.GOOGLE_ANALYTICS_UID,
-	http: {
-		port: process.env.PORT || 8080,
-		staticPath: path.join(__dirname, 'dist'),
-	},
+const config = {
+	isDev: process.env.NODE_ENV === 'development',
+	siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+	siteDescription: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Personal presentation page',
+	siteAuthor: process.env.NEXT_PUBLIC_SITE_AUTHOR,
+	siteKeywords: process.env.NEXT_PUBLIC_SITE_KEYWORDS,
+	googleAnalyticsId: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_UID,
 }
+
+export default config

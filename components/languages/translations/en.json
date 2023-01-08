@@ -7,7 +7,7 @@
     "title-education": "Software Engineer",
     "place-education": "University of West Bohemia",
     "url-education": "https://www.zcu.cz/en/",
-    "tooltip-nodejs": "JS runtime outside of browser. Using <1>Express</1> for server!",
+    "tooltip-nodejs": "JS runtime outside of browser. However this site uses <1>NextJS</1> :)",
     "tooltip-git": "The best versioning system. Because of <1>reflog</1>!",
     "tooltip-github": "GitHub Profile",
     "tooltip-linkedin": "LinkedIn Profile",
