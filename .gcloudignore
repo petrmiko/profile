@@ -3,6 +3,7 @@
 .gitignore
 
 .cache
+.next
 .husky
 node_modules/
 dist/
