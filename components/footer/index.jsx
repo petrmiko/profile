@@ -7,8 +7,8 @@ const Footer = () => {
 
 	return <div className='flex flex-row justify-between px-2 py-1 text-sm text-center'>
 		<div className='self-end'>© 2023 Petr Miko</div>
-		<ul className='md:inline-flex list-none justify-between items-center'>
-			<li className='pr-5'><Link href='https://github.com/petrmiko/profile'>{t('source-code')}</Link></li>
+		<ul className='sm:inline-flex list-none justify-between items-baseline gap-x-3'>
+			<li><Link href='https://github.com/petrmiko/profile'>{t('source-code')}</Link></li>
 			<li><Languages /></li>
 		</ul>
 	</div>
