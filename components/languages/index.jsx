@@ -10,18 +10,18 @@ const Languages = () => {
 	return <select
 		id='languages'
 		className='
-            absolute w-24 top-4 right-4
-            bg-white border border-gray-300 rounded-md shadow-sm
-            px-3 py-2
+			appearance-none
+            bg-white border rounded-md shadow-sm
+            p-1
             text-left cursor-default
-            focus:outline-none focus:ring-1 focus:bg-gray-100 focus:border-gray-500
+            focus:outline-none focus:ring-0 focus:bg-slate-100 focus:border-slate-600
             text-sm
         '
 		onChange={onChange}
 		value={i18n.language}
 	>
-		<option value='cz'>Čeština</option>
-		<option value='en'>English</option>
+		<option value='cz'>🇨🇿 Čeština</option>
+		<option value='en'>🇬🇧 English</option>
 	</select>
 }
 

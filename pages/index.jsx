@@ -5,7 +5,6 @@ import Footer from '../components/footer'
 
 import config from '../config'
 import GoogleAnalytics from '../components/google-analytics'
-import Languages from '../components/languages'
 
 const Home = () => {
 	return <div className='flex flex-col h-screen justify-between'>
@@ -19,7 +18,6 @@ const Home = () => {
 		</Head>
 
 		{config.googleAnalyticsId && !config.isDev && <GoogleAnalytics uid={config.googleAnalyticsId}/>}
-		<Languages />
 		<Content />
 		<Footer />
 	</div>

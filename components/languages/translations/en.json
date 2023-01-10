@@ -14,6 +14,5 @@
     "tooltip-react": "JS frontend framework by Facebook",
     "tooltip-redux": "Keeping application state outside of React components",
     "tooltip-twitter": "Twitter Account",
-    "source-code": "Source Code",
-    "icons-from": "Icons from Simple Icons"
+    "source-code": "Source Code"
 }

@@ -14,6 +14,5 @@
     "tooltip-react": "Frontendový JS framework od Facebooku",
     "tooltip-redux": "Pro udržování aplikačního stavu mimo React komponenty",
     "tooltip-twitter": "Účet na Twitteru",
-    "source-code": "Zdrojáky",
-    "icons-from": "Ikonky ze Simple Icons"
+    "source-code": "Zdrojáky"
 }

@@ -1,7 +1,11 @@
 import Tippy from '@tippyjs/react'
 
 import Link, {VARIANT_CLASS as LINK_VARIANT} from '../shared/link'
-import { Twitter, Linkedin, Github } from '@icons-pack/react-simple-icons'
+import {
+	FiGithub as Github,
+	FiLinkedin as Linkedin,
+	FiTwitter as Twitter,
+} from 'react-icons/fi'
 
 import Image from 'next/image'
 import { Trans, useTranslation } from 'react-i18next'
