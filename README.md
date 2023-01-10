@@ -1,6 +1,6 @@
 # Profile
 
-Simple express/react based web serving also as my playground when trying things.
+Simple NextJS based web serving also as my playground when trying things.
 
 Deployed [here](https://www.petrmiko.cz).
 
