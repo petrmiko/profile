@@ -14,5 +14,7 @@
     "tooltip-react": "JS frontend framework by Facebook",
     "tooltip-redux": "Keeping application state outside of React components",
     "tooltip-twitter": "Twitter Account",
-    "source-code": "Source Code"
+    "source-code": "Source Code",
+    "404-main": "This is not what you were looking for.",
+    "404-hint": "Try returning to the <1>home page</1>."
 }
