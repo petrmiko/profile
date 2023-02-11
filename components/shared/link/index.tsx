@@ -1,5 +1,6 @@
-import { forwardRef, memo } from 'react'
+import { memo, type ReactNode } from 'react'
 import PropTypes from 'prop-types'
+import NextLink from "next/link"
 
 import style from './link.module.scss'
 
@@ -8,22 +9,28 @@ export const VARIANT_CLASS = {
 	SOCIAL_ICON: style.socialIcon,
 }
 
-const Link = forwardRef((props, ref) => {
+type LinkProps = {
+	href: string,
+	children?: ReactNode,
+	className?: string,
+	disabled?: boolean,
+	isRelative?: boolean,
+}
+
+const Link = (props: LinkProps) => {
 	const { children, className, disabled, href, isRelative, ...rest } = props
 
 	if (disabled) {
-		return <div ref={ref} className={className} {...rest}>{children}</div>
+		return <div className={className} {...rest}>{children}</div>
 	}
 
 	return isRelative
-		? <a ref={ref} href={href} className={className} {...rest}>{children}</a>
-		: <a ref={ref} href={href} className={className} target='_blank' rel='noopener noreferrer' {...rest}>{children}</a>
-})
-
-Link.displayName = 'Link'
+		? <NextLink href={href} className={className} {...rest}>{children}</NextLink>
+		: <a href={href} className={className} target='_blank' rel='noopener noreferrer' {...rest}>{children}</a>
+}
 
 Link.propTypes = {
-	children: PropTypes.any,
+	children: PropTypes.any.isRequired,
 	className: PropTypes.string,
 	disabled: PropTypes.bool,
 	href: PropTypes.string.isRequired,

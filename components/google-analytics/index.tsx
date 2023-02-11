@@ -1,7 +1,11 @@
 import { string } from 'prop-types'
 import Script from 'next/script'
 
-const GoogleAnalytics = ({ uid }) => {
+type GoogleAnalyticsProps = {
+	uid: string,
+}
+
+const GoogleAnalytics = ({ uid }: GoogleAnalyticsProps) => {
 	return <>
 		<Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${uid}`}/>
 		<Script

@@ -1,6 +1,7 @@
 
 import { use as i18nUse } from 'i18next'
 import { initReactI18next } from 'react-i18next'
+import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import '../styles/globals.scss'
@@ -26,7 +27,7 @@ i18nUse(initReactI18next) // passes i18n down to react-i18next
 		},
 	})
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
 	return <div className='flex flex-col h-screen justify-between'>
 		<Head>
 			<title>{config.siteName}</title>
