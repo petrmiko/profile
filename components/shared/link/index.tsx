@@ -1,4 +1,4 @@
-import { memo, type ReactNode } from 'react'
+import { forwardRef, memo, type ReactNode, type Ref } from 'react'
 import PropTypes from 'prop-types'
 import NextLink from "next/link"
 
@@ -17,17 +17,19 @@ type LinkProps = {
 	isRelative?: boolean,
 }
 
-const Link = (props: LinkProps) => {
+const Link = forwardRef((props: LinkProps, ref: Ref<any>) => {
 	const { children, className, disabled, href, isRelative, ...rest } = props
 
 	if (disabled) {
-		return <div className={className} {...rest}>{children}</div>
+		return <div ref={ref} className={className} {...rest}>{children}</div>
 	}
 
 	return isRelative
-		? <NextLink href={href} className={className} {...rest}>{children}</NextLink>
-		: <a href={href} className={className} target='_blank' rel='noopener noreferrer' {...rest}>{children}</a>
-}
+		? <NextLink href={href} ref={ref} className={className} {...rest}>{children}</NextLink>
+		: <a href={href} ref={ref}  className={className} target='_blank' rel='noopener noreferrer' {...rest}>{children}</a>
+})
+
+Link.displayName = 'Link'
 
 Link.propTypes = {
 	children: PropTypes.any.isRequired,

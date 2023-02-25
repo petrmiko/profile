@@ -11,7 +11,7 @@
     "url": "git+ssh://git@github.com:petrmiko/profile.git"
   },
   "engines": {
-    "node": "^18.13.0"
+    "node": "^18.14.0"
   },
   "scripts": {
     "build": "next build",
@@ -22,18 +22,18 @@
     "gcp-build": "npm run build && npm prune --omit=dev"
   },
   "dependencies": {
-    "i18next": "^22.4.9",
-    "next": "13.1.1",
+    "i18next": "^22.4.10",
+    "next": "^13.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-i18next": "^12.1.4",
+    "react-i18next": "^12.2.0",
     "sharp": "^0.31.3"
   },
   "devDependencies": {
     "@tippyjs/react": "^4.2.6",
     "@types/react": "18.0.28",
     "autoprefixer": "^10.4.13",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^9.1.2",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.26.0",
