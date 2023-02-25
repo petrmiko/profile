@@ -7,6 +7,7 @@
     "title-education": "Softwarový inženýr",
     "place-education": "Západočeská univerzita v Plzni",
     "url-education": "https://www.zcu.cz/",
+    "tooltip-mastodon": "Profil na Mastodon.social",
     "tooltip-nodejs": "JS runtime vně webového prohlížeče. Nicméně tyto stránky běží na <1>NextJS</1> :)",
     "tooltip-linkedin": "Profil na LinkedInu",
     "tooltip-git": "Nejlepší verzovací systém. Kvůli <1>reflogu</1>!",

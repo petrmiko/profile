@@ -4,6 +4,9 @@ import {
 	FiLinkedin as Linkedin,
 	FiTwitter as Twitter,
 } from 'react-icons/fi'
+import {
+	RiMastodonLine as Mastodon,
+} from 'react-icons/ri'
 import Tippy from '@tippyjs/react'
 
 import Link, {VARIANT_CLASS as LINK_VARIANT} from '../shared/link'
@@ -17,6 +20,13 @@ const Social = () => {
 			<Tippy arrow={false} placement='bottom' content={t('tooltip-twitter')}>
 				<Link href='https://twitter.com/petrmiko' className={LINK_VARIANT.SOCIAL_ICON}>
 					<Twitter title='' size={LINK_ICON_SIZE} color='inherit'/>
+				</Link>
+			</Tippy>
+		</li>
+		<li>
+			<Tippy arrow={false} placement='bottom' content={t('tooltip-mastodon')}>
+				<Link href='https://mastodon.social/@petrmiko' className={LINK_VARIANT.SOCIAL_ICON}>
+					<Mastodon title='' size={LINK_ICON_SIZE} color='inherit'/>
 				</Link>
 			</Tippy>
 		</li>
