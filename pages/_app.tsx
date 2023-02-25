@@ -9,7 +9,6 @@ import 'tippy.js/dist/tippy.css'
 
 import config from '../config'
 import Footer from '../components/footer'
-import GoogleAnalytics from '../components/google-analytics'
 import czech from '../components/languages/translations/cz.json'
 import english from '../components/languages/translations/en.json'
 
@@ -42,7 +41,6 @@ export default function App({ Component, pageProps }: AppProps) {
 			<link rel="shortcut icon" href="/assets/favicon.png" />
 		</Head>
 		<Component {...pageProps} />
-		{config.googleAnalyticsId && !config.isDev && <GoogleAnalytics uid={config.googleAnalyticsId}/>}
 		<Footer />
 	</div>
 }

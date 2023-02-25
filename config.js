@@ -4,7 +4,6 @@ const config = {
 	siteDescription: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Personal presentation page',
 	siteAuthor: process.env.NEXT_PUBLIC_SITE_AUTHOR,
 	siteKeywords: process.env.NEXT_PUBLIC_SITE_KEYWORDS,
-	googleAnalyticsId: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_UID,
 }
 
 export default config
