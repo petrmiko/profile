@@ -4,6 +4,7 @@ const nextConfig = {
 	i18n: {
 		locales: ['cs-CZ', 'en-US'],
 		defaultLocale: 'cs-CZ',
+		localeDetection: false,
 		domains: [
 			{
 			  domain: process.env.DOMAIN_CZ,
