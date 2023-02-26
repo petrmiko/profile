@@ -11,22 +11,25 @@ import config from '../config'
 import Footer from '../components/footer'
 import czech from '../components/languages/translations/cz.json'
 import english from '../components/languages/translations/en.json'
-
-i18nUse(initReactI18next) // passes i18n down to react-i18next
-	.init({
-		resources: {
-			cz: { translation: czech },
-			en: { translation: english },
-		},
-		lng: 'cz',
-		fallbackLng: 'en',
-
-		interpolation: {
-			escapeValue: false,
-		},
-	})
+import { useRouter } from 'next/router'
 
 export default function App({ Component, pageProps }: AppProps) {
+	const { locale, defaultLocale } = useRouter()
+
+	i18nUse(initReactI18next) // passes i18n down to react-i18next
+		.init({
+			resources: {
+				'cs-CZ': { translation: czech },
+				'en-US': { translation: english },
+			},
+			lng: locale,
+			fallbackLng: defaultLocale,
+
+			interpolation: {
+				escapeValue: false,
+			},
+		})
+
 	return <div className='flex flex-col h-screen justify-between'>
 		<Head>
 			<title>{config.siteName}</title>

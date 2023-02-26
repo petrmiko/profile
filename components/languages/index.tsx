@@ -1,10 +1,11 @@
-import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router';
 
 const Languages = () => {
-	const { i18n } = useTranslation()
+	const router = useRouter()
+	const { locale, pathname, asPath, query } = router
 
-	const onChange = (event) => {
-		i18n.changeLanguage(event.target.value)
+	const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+		router.push({ pathname, query }, asPath, { locale: event.target.value })
 	}
 
 	return <select
@@ -18,10 +19,10 @@ const Languages = () => {
             text-sm
         '
 		onChange={onChange}
-		value={i18n.language}
+		value={locale}
 	>
-		<option value='cz'>🇨🇿 Čeština</option>
-		<option value='en'>🇬🇧 English</option>
+		<option value='cs-CZ'>🇨🇿 Čeština</option>
+		<option value='en-US'>🇬🇧 English</option>
 	</select>
 }
 
