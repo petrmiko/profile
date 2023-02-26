@@ -4,7 +4,7 @@ import { initReactI18next } from 'react-i18next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import '../styles/globals.scss'
+import '../styles/globals.css'
 import 'tippy.js/dist/tippy.css'
 
 import config from '../config'

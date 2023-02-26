@@ -2,7 +2,7 @@ import { forwardRef, memo, type ReactNode, type Ref } from 'react'
 import PropTypes from 'prop-types'
 import NextLink from "next/link"
 
-import style from './link.module.scss'
+import style from './link.module.css'
 
 export const VARIANT_CLASS = {
 	TAG: style.tag,

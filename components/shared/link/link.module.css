@@ -29,6 +29,6 @@
         hover:scale-100
         text-stone-600
     ;
-
-    &:hover { @apply text-white }
 }
+
+.socialIcon:hover { @apply text-white }
