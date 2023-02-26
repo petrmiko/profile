@@ -1,6 +1,6 @@
 
 import { use as i18nUse } from 'i18next'
-import { initReactI18next } from 'react-i18next'
+import { initReactI18next, useTranslation } from 'react-i18next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
@@ -13,15 +13,17 @@ import czech from '../components/languages/translations/cz.json'
 import english from '../components/languages/translations/en.json'
 import { useRouter } from 'next/router'
 
+const translations = {
+	'cs-CZ': { translation: czech },
+	'en-US': { translation: english },
+}
+
 export default function App({ Component, pageProps }: AppProps) {
 	const { locale, defaultLocale } = useRouter()
 
 	i18nUse(initReactI18next) // passes i18n down to react-i18next
 		.init({
-			resources: {
-				'cs-CZ': { translation: czech },
-				'en-US': { translation: english },
-			},
+			resources: translations,
 			lng: locale,
 			fallbackLng: defaultLocale,
 
@@ -30,12 +32,13 @@ export default function App({ Component, pageProps }: AppProps) {
 			},
 		})
 
+	const t = (resourceKey) => translations[locale].translation[resourceKey]
+
 	return <div className='flex flex-col h-screen justify-between'>
 		<Head>
-			<title>{config.siteName}</title>
+			<title>{t('site-name')}</title>
 			<meta name="author" content={config.siteAuthor} />
-			<meta name="description" content={config.siteDescription} />
-			<meta name="keywords" content={config.siteKeywords} />
+			<meta name="description" content={t('site-description')} />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<link rel="shortcut icon" href="/assets/favicon.ico"></link>
 			<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
