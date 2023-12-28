@@ -1,7 +1,7 @@
 {
     "site-name": "Petr Miko - JS Developer Profile",
     "site-description": "My name is Petr Miko and I am a JS developer located in Pilsen, Czechia. These pages serve as a simple personal profile.", 
-    "city": "Pilsen",
+    "city": "Dobřany/Pilsen",
     "country": "Czech Republic",
     "header-job": "Work",
     "title-job": "JavaScript Developer",
@@ -9,7 +9,7 @@
     "title-education": "Software Engineer",
     "place-education": "University of West Bohemia",
     "url-education": "https://www.zcu.cz/en/",
-    "tooltip-mastodon": "Mastodon.social Profile (in Czech)",
+    "tooltip-mastodon": "Mastodon Account (in Czech)",
     "tooltip-nodejs": "JS runtime outside of browser. However this site uses <1>NextJS</1> :)",
     "tooltip-git": "The best versioning system. Because of <1>reflog</1>!",
     "tooltip-github": "GitHub Profile",
