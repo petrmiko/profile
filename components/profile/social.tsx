@@ -2,10 +2,10 @@ import { Trans, useTranslation } from 'react-i18next'
 import {
 	FiGithub as Github,
 	FiLinkedin as Linkedin,
-	FiTwitter as Twitter,
 } from 'react-icons/fi'
 import {
 	RiMastodonLine as Mastodon,
+	RiTwitterXLine  as Twitter,
 } from 'react-icons/ri'
 import Tippy from '@tippyjs/react'
 
@@ -25,7 +25,7 @@ const Social = () => {
 		</li>
 		<li>
 			<Tippy arrow={false} placement='bottom' content={t('tooltip-mastodon')}>
-				<Link href='https://mastodon.social/@petrmiko' className={LINK_VARIANT.SOCIAL_ICON}>
+				<Link href='https://mastodonczech.cz/@petrmiko' className={LINK_VARIANT.SOCIAL_ICON}>
 					<Mastodon title='' size={LINK_ICON_SIZE} color='inherit'/>
 				</Link>
 			</Tippy>
