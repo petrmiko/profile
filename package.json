@@ -22,11 +22,11 @@
     "gcp-build": "npm run build && npm prune --omit=dev"
   },
   "dependencies": {
-    "i18next": "^22.4.10",
-    "next": "^13.2.1",
+    "i18next": "^23.7.12",
+    "next": "^14.0.4",
     "prop-types": "^15.8.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-i18next": "^12.2.0",
     "sharp": "^0.33.1"
   },
@@ -37,7 +37,7 @@
     "babel-loader": "^9.1.2",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.35.0",
-    "eslint-config-next": "^13.2.1",
+    "eslint-config-next": "^14.0.4",
     "husky": "^8.0.1",
     "postcss": "^8.4.21",
     "react-icons": "^4.12.0",
