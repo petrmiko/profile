@@ -1,0 +1,11 @@
+.cache
+.next
+dist
+node_modules
+*.log
+out
+.env
+.env.local
+.husky
+.git
+node_modules

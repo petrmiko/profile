@@ -19,7 +19,8 @@ const nextConfig = {
 			domains,
 			localeDetection: false,
 		})
-	}
+	},
+	output: 'standalone',
 }
 
 module.exports = nextConfig
