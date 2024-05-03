@@ -16,6 +16,7 @@ COPY --from=builder /app/public ./public
 
 RUN mkdir .next
 RUN chown node:node .next
+RUN npm i sharp --omit=dev
 
 COPY --from=builder --chown=node:node /app/.next/standalone ./
 COPY --from=builder --chown=node:node /app/.next/static ./.next/static
