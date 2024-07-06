@@ -12,6 +12,7 @@ import Footer from '../components/footer'
 import czech from '../components/languages/translations/cz.json'
 import english from '../components/languages/translations/en.json'
 import { useRouter } from 'next/router'
+import nextConfig from '../next.config'
 
 const translations = {
 	'cs-CZ': { translation: czech },
@@ -19,7 +20,7 @@ const translations = {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-	const { locale, defaultLocale } = useRouter()
+	const { locale, defaultLocale = 'cs-CZ' } = useRouter()
 
 	i18nUse(initReactI18next) // passes i18n down to react-i18next
 		.init({
@@ -32,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			},
 		})
 
-	const t = (resourceKey) => translations[locale].translation[resourceKey]
+	const t = (resourceKey) => translations[locale || defaultLocale].translation[resourceKey]
 
 	return <div className='flex flex-col h-screen justify-between'>
 		<Head>
