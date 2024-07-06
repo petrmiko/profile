@@ -1,5 +1,4 @@
 import { forwardRef, memo, type ReactNode, type Ref } from 'react'
-import PropTypes from 'prop-types'
 import NextLink from "next/link"
 
 import style from './link.module.css'
@@ -30,14 +29,6 @@ const Link = forwardRef((props: LinkProps, ref: Ref<any>) => {
 })
 
 Link.displayName = 'Link'
-
-Link.propTypes = {
-	children: PropTypes.any.isRequired,
-	className: PropTypes.string,
-	disabled: PropTypes.bool,
-	href: PropTypes.string.isRequired,
-	isRelative: PropTypes.bool,
-}
 
 Link.defaultProps = {
 	className: 'underline hover:no-underline',
