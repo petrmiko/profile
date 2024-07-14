@@ -17,7 +17,7 @@ type LinkProps = {
 }
 
 const Link = forwardRef((props: LinkProps, ref: Ref<any>) => {
-	const { children, className, disabled, href, isRelative, ...rest } = props
+	const { children, href, className = 'underline hover:no-underline', disabled = false, isRelative = false, ...rest } = props
 
 	if (disabled) {
 		return <div ref={ref} className={className} {...rest}>{children}</div>
@@ -29,11 +29,5 @@ const Link = forwardRef((props: LinkProps, ref: Ref<any>) => {
 })
 
 Link.displayName = 'Link'
-
-Link.defaultProps = {
-	className: 'underline hover:no-underline',
-	isRelative: false,
-	disabled: false,
-}
 
 export default memo(Link)
