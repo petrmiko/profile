@@ -5,7 +5,6 @@ import {
 } from 'react-icons/fi'
 import {
 	RiMastodonLine as Mastodon,
-	RiTwitterXLine  as Twitter,
 } from 'react-icons/ri'
 import Tippy from '@tippyjs/react'
 
@@ -16,13 +15,6 @@ const Social = () => {
 	const { t } = useTranslation()
 
 	return <ul className='flex list-none md:space-x-20'>
-		<li>
-			<Tippy arrow={false} placement='bottom' content={t('tooltip-twitter')}>
-				<Link href='https://twitter.com/petrmiko' className={LINK_VARIANT.SOCIAL_ICON}>
-					<Twitter title='' size={LINK_ICON_SIZE} color='inherit'/>
-				</Link>
-			</Tippy>
-		</li>
 		<li>
 			<Tippy arrow={false} placement='bottom' content={t('tooltip-mastodon')}>
 				<Link href='https://mastodonczech.cz/@petrmiko' className={LINK_VARIANT.SOCIAL_ICON}>
