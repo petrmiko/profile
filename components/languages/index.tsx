@@ -15,7 +15,7 @@ const Languages = () => {
             bg-white border rounded-md shadow-sm
             p-1
             text-left cursor-default
-            focus:outline-none focus:ring-0 focus:bg-slate-100 focus:border-slate-600
+            focus:outline-hidden focus:ring-0 focus:bg-slate-100 focus:border-slate-600
             text-sm
         '
 		onChange={onChange}
