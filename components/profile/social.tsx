@@ -1,4 +1,4 @@
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { FiGithub as Github, FiLinkedin as Linkedin } from 'react-icons/fi'
 import { RiMastodonLine as Mastodon } from 'react-icons/ri'
 import Tippy from '@tippyjs/react'

@@ -1,4 +1,4 @@
-import { forwardRef, memo, type ReactNode, type Ref } from 'react'
+import { memo, type ReactNode } from 'react'
 import NextLink from 'next/link'
 
 import style from './link.module.css'
@@ -16,7 +16,7 @@ type LinkProps = {
 	isRelative?: boolean
 }
 
-const Link = forwardRef((props: LinkProps, ref: Ref<any>) => {
+const Link = (props: LinkProps) => {
 	const {
 		children,
 		href,
@@ -28,20 +28,19 @@ const Link = forwardRef((props: LinkProps, ref: Ref<any>) => {
 
 	if (disabled) {
 		return (
-			<div ref={ref} className={className} {...rest}>
+			<div className={className} {...rest}>
 				{children}
 			</div>
 		)
 	}
 
 	return isRelative ? (
-		<NextLink href={href} ref={ref} className={className} {...rest}>
+		<NextLink href={href} className={className} {...rest}>
 			{children}
 		</NextLink>
 	) : (
 		<a
 			href={href}
-			ref={ref}
 			className={className}
 			target="_blank"
 			rel="noopener noreferrer"
@@ -50,7 +49,7 @@ const Link = forwardRef((props: LinkProps, ref: Ref<any>) => {
 			{children}
 		</a>
 	)
-})
+}
 
 Link.displayName = 'Link'
 

@@ -1,5 +1,5 @@
 import { use as i18nUse } from 'i18next'
-import { initReactI18next, useTranslation } from 'react-i18next'
+import { initReactI18next } from 'react-i18next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
@@ -11,7 +11,6 @@ import Footer from '../components/footer'
 import czech from '../components/languages/translations/cz.json'
 import english from '../components/languages/translations/en.json'
 import { useRouter } from 'next/router'
-import nextConfig from '../next.config'
 
 const translations = {
 	'cs-CZ': { translation: czech },
