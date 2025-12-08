@@ -33,6 +33,7 @@
 		"@tailwindcss/postcss": "^4.0.0",
 		"@tippyjs/react": "^4.2.6",
 		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
 		"@typescript-eslint/eslint-plugin": "^8.49.0",
 		"@typescript-eslint/parser": "^8.49.0",
 		"css-minimizer-webpack-plugin": "^7.0.0",
