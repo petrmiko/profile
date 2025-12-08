@@ -1,8 +1,7 @@
 @reference "../../../styles/globals.css";
 
 .tag {
-    @apply 
-        inline-block
+	@apply inline-block
         mx-2 my-1
         px-2 py-1
         font-mono
@@ -15,13 +14,11 @@
         hover:bg-slate-600 
         hover:border-slate-600
         hover:text-white
-        hover:scale-110
-    ;
+        hover:scale-110;
 }
 
 .socialIcon {
-    @apply
-        inline-flex
+	@apply inline-flex
         rounded-full
         m-4
         p-4
@@ -29,8 +26,9 @@
 
         hover:bg-slate-600 
         hover:scale-100
-        text-stone-600
-    ;
+        text-stone-600;
 }
 
-.socialIcon:hover { @apply text-white }
+.socialIcon:hover {
+	@apply text-white;
+}

@@ -1,4 +1,3 @@
-
 import { use as i18nUse } from 'i18next'
 import { initReactI18next, useTranslation } from 'react-i18next'
 import type { AppProps } from 'next/app'
@@ -33,21 +32,38 @@ export default function App({ Component, pageProps }: AppProps) {
 			},
 		})
 
-	const t = (resourceKey) => translations[locale || defaultLocale].translation[resourceKey]
+	const t = (resourceKey) =>
+		translations[locale || defaultLocale].translation[resourceKey]
 
-	return <div className='flex flex-col h-screen justify-between'>
-		<Head>
-			<title>{t('site-name')}</title>
-			<meta name="author" content={config.siteAuthor} />
-			<meta name="description" content={t('site-description')} />
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<link rel="shortcut icon" href="/assets/favicon.ico"></link>
-			<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
-			<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"/>
-			<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"/>
-			<link rel="shortcut icon" href="/assets/favicon.png" />
-		</Head>
-		<Component {...pageProps} />
-		<Footer />
-	</div>
+	return (
+		<div className="flex flex-col h-screen justify-between">
+			<Head>
+				<title>{t('site-name')}</title>
+				<meta name="author" content={config.siteAuthor} />
+				<meta name="description" content={t('site-description')} />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<link rel="shortcut icon" href="/assets/favicon.ico"></link>
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/assets/apple-touch-icon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="/assets/favicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="/assets/favicon-16x16.png"
+				/>
+				<link rel="shortcut icon" href="/assets/favicon.png" />
+			</Head>
+			<Component {...pageProps} />
+			<Footer />
+		</div>
+	)
 }
