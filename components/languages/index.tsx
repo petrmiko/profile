@@ -6,6 +6,7 @@ const Languages = () => {
 
 	const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
 		router.push({ pathname, query }, asPath, { locale: event.target.value })
+			.catch((error) => console.error('Redirect failed', error))
 	}
 
 	return (
