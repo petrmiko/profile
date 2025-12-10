@@ -15,8 +15,7 @@ const Skills = () => {
 					placement="bottom"
 					content={
 						<Trans i18nKey="tooltip-nodejs">
-							JS runtime outside of browser. However this site uses{' '}
-							<Link href="https://nextjs.org/">NextJS</Link> :)
+							JS runtime outside of browser. However this site uses <Link href="https://nextjs.org/">NextJS</Link> :)
 						</Trans>
 					}
 				>
@@ -46,8 +45,7 @@ const Skills = () => {
 					placement="bottom"
 					content={
 						<Trans i18nKey="tooltip-git">
-							The best versioning system. Because of{' '}
-							<Link href="http://effectif.com/git/recovering-lost-git-commits">
+							The best versioning system. Because of <Link href="http://effectif.com/git/recovering-lost-git-commits">
 								reflog
 							</Link>
 							!
