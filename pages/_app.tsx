@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	const t = (resourceKey: string): string => {
 		const { translation } = translations[resolvedLocale]
-		return translation[resourceKey] as string
+		return translation[resourceKey as keyof typeof translation]
 	}
 
 	if (globalError) {
