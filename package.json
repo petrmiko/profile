@@ -34,7 +34,7 @@
 		"@tippyjs/react": "^4.2.6",
 		"@types/react": "^19.2.7",
 		"@types/react-dom": "^19.2.3",
-		"css-minimizer-webpack-plugin": "^7.0.3",
+		"css-minimizer-webpack-plugin": "^8.0.0",
 		"eslint": "^9.39.1",
 		"eslint-config-next": "^16.0.10",
 		"eslint-config-prettier": "^10.1.8",
