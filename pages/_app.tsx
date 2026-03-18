@@ -66,7 +66,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	}
 
 	return (
-		<div className="flex flex-col h-screen justify-between">
+		<>
 			<Head>
 				<title>{t('site-name')}</title>
 				<meta name="author" content={config.siteAuthor} />
@@ -92,8 +92,10 @@ export default function App({ Component, pageProps }: AppProps) {
 				/>
 				<link rel="shortcut icon" href="/assets/favicon.png" />
 			</Head>
-			<Component {...pageProps} />
-			<Footer />
-		</div>
+			<div className="grid grid-rows-[1fr_auto] min-h-screen">
+				<Component {...pageProps} />
+				<Footer />
+			</div>
+		</>
 	)
 }

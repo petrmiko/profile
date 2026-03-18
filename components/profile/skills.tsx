@@ -33,8 +33,8 @@ const Skills = () => {
 			</li>
 			<li>
 				<Tippy arrow={false} placement="bottom" content={t('tooltip-redux')}>
-					<Link href="https://redux.js.org" className={LINK_VARIANT.TAG}>
-						Redux
+					<Link href="https://redux-toolkit.js.org/" className={LINK_VARIANT.TAG}>
+						Redux Toolkit
 					</Link>
 				</Tippy>
 			</li>
