@@ -9,6 +9,7 @@ const Person = () => {
 	return (
 		<div className="flex flex-col w-full align-middle">
 			<Image
+				loading="eager"
 				className="rounded-full self-center scale-75 md:scale-100 transform transition md:mb-6"
 				src="/assets/photo.jpg"
 				alt={`${config.siteAuthor} (photo)`}
