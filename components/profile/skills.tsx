@@ -1,7 +1,8 @@
+'use client'
 import { Trans, useTranslation } from 'react-i18next'
-import Tippy from '@tippyjs/react'
 
 import Link, { VARIANT_CLASS as LINK_VARIANT } from '../shared/link'
+import Tooltip from '../shared/tooltip'
 
 const Skills = () => {
 	const { t } = useTranslation()
@@ -9,10 +10,7 @@ const Skills = () => {
 	return (
 		<ul className="inline-flex list-none space-x-5">
 			<li>
-				<Tippy
-					arrow={false}
-					interactive
-					placement="bottom"
+				<Tooltip
 					content={
 						<Trans i18nKey="tooltip-nodejs">
 							JS runtime outside of browser. However this site uses <Link href="https://nextjs.org/">NextJS</Link> :)
@@ -22,27 +20,24 @@ const Skills = () => {
 					<Link href="https://nodejs.org" className={LINK_VARIANT.TAG}>
 						NodeJS
 					</Link>
-				</Tippy>
+				</Tooltip>
 			</li>
 			<li>
-				<Tippy arrow={false} placement="bottom" content={t('tooltip-react')}>
+				<Tooltip content={t('tooltip-react')}>
 					<Link href="https://reactjs.org" className={LINK_VARIANT.TAG}>
 						React
 					</Link>
-				</Tippy>
+				</Tooltip>
 			</li>
 			<li>
-				<Tippy arrow={false} placement="bottom" content={t('tooltip-redux')}>
+				<Tooltip content={t('tooltip-redux')}>
 					<Link href="https://redux-toolkit.js.org/" className={LINK_VARIANT.TAG}>
 						Redux Toolkit
 					</Link>
-				</Tippy>
+				</Tooltip>
 			</li>
 			<li>
-				<Tippy
-					arrow={false}
-					interactive
-					placement="bottom"
+				<Tooltip
 					content={
 						<Trans i18nKey="tooltip-git">
 							The best versioning system. Because of <Link href="http://effectif.com/git/recovering-lost-git-commits">
@@ -55,7 +50,7 @@ const Skills = () => {
 					<Link href="https://git-scm.com" className={LINK_VARIANT.TAG}>
 						Git
 					</Link>
-				</Tippy>
+				</Tooltip>
 			</li>
 		</ul>
 	)

@@ -1,3 +1,4 @@
+'use client'
 import { useTranslation } from 'react-i18next'
 import Languages from '../languages'
 import Link from '../shared/link'

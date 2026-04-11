@@ -1,12 +1,16 @@
-import { useRouter } from 'next/router'
+'use client'
+import { useRouter } from 'next/navigation'
+import { useTranslation } from 'react-i18next'
 
 const Languages = () => {
 	const router = useRouter()
-	const { locale, pathname, asPath, query } = router
+	const { i18n } = useTranslation()
+	const locale = i18n.language
 
 	const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		router.push({ pathname, query }, asPath, { locale: event.target.value })
-			.catch((error) => console.error('Redirect failed', error))
+		const newLocale = event.target.value
+		document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`
+		router.refresh()
 	}
 
 	return (
