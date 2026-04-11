@@ -1,7 +1,7 @@
 'use client'
 import i18n from 'i18next'
 import { I18nextProvider, initReactI18next } from 'react-i18next'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import czech from '../languages/translations/cz.json'
 import english from '../languages/translations/en.json'
 
@@ -10,6 +10,13 @@ const resources = {
 	'en-US': { translation: english },
 }
 
+i18n.use(initReactI18next).init({
+	resources,
+	lng: 'cs-CZ',
+	fallbackLng: 'cs-CZ',
+	interpolation: { escapeValue: false },
+})
+
 export default function I18nProvider({
 	lang,
 	children,
@@ -17,18 +24,6 @@ export default function I18nProvider({
 	lang: string
 	children: React.ReactNode
 }) {
-	const initialised = useRef<true | null>(null)
-
-	if (initialised.current == null) {
-		i18n.use(initReactI18next).init({
-			resources,
-			lng: lang,
-			fallbackLng: 'cs-CZ',
-			interpolation: { escapeValue: false },
-		})
-		initialised.current = true
-	}
-
 	useEffect(() => {
 		i18n.changeLanguage(lang)
 	}, [lang])
