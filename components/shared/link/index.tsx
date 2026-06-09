@@ -20,7 +20,7 @@ const Link = (props: LinkProps) => {
 	const {
 		children,
 		href,
-		className = 'underline hover:no-underline',
+		className = 'underline underline-offset-2 decoration-slate-500 transition-colors hover:text-sky-300 hover:decoration-sky-300',
 		disabled = false,
 		isRelative = false,
 		...rest

@@ -7,7 +7,7 @@ const Footer = () => {
 	const { t } = useTranslation()
 
 	return (
-		<footer className="flex flex-row justify-between px-2 py-1 text-sm text-center">
+		<footer className="flex flex-row justify-between px-3 py-2 text-sm text-center text-slate-500">
 			<div className="self-end">© 2023 Petr Miko</div>
 			<ul className="sm:inline-flex list-none justify-between items-baseline gap-x-3">
 				<li>

@@ -12,7 +12,7 @@ const Tooltip = ({ content, children }: TooltipProps) => (
 			className="
 				absolute top-full left-1/2 -translate-x-1/2 mt-1
 				invisible group-hover:visible
-				bg-gray-800 text-white text-xs rounded px-2 py-1
+				bg-slate-800/95 text-slate-100 text-xs rounded-lg border border-slate-700 shadow-xl px-3 py-1.5
 				whitespace-nowrap z-50
 			"
 		>

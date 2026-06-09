@@ -18,10 +18,10 @@ const Languages = () => {
 			id="languages"
 			className="
 			appearance-none
-            bg-white border rounded-md shadow-sm
+            bg-slate-900 border border-slate-700 rounded-md shadow-sm
             p-1
-            text-left cursor-default
-            focus:outline-hidden focus:ring-0 focus:bg-slate-100 focus:border-slate-600
+            text-left text-slate-300 cursor-default
+            focus:outline-hidden focus:ring-0 focus:bg-slate-800 focus:border-sky-400
             text-sm
         "
 			onChange={onChange}
