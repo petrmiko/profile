@@ -1,5 +1,4 @@
-import { memo, type ReactNode } from 'react'
-import NextLink from 'next/link'
+import type { ReactNode } from 'react'
 
 import style from './link.module.css'
 
@@ -8,49 +7,19 @@ export const VARIANT_CLASS = {
 	SOCIAL_ICON: style.socialIcon,
 }
 
+const DEFAULT_CLASS =
+	'underline underline-offset-2 decoration-slate-500 transition-colors hover:text-sky-300 hover:decoration-sky-300'
+
 type LinkProps = {
 	href: string
 	children?: ReactNode
 	className?: string
-	disabled?: boolean
-	isRelative?: boolean
 }
 
-const Link = (props: LinkProps) => {
-	const {
-		children,
-		href,
-		className = 'underline underline-offset-2 decoration-slate-500 transition-colors hover:text-sky-300 hover:decoration-sky-300',
-		disabled = false,
-		isRelative = false,
-		...rest
-	} = props
+const Link = ({ href, children, className = DEFAULT_CLASS }: LinkProps) => (
+	<a href={href} className={className} target="_blank" rel="noopener noreferrer">
+		{children}
+	</a>
+)
 
-	if (disabled) {
-		return (
-			<div className={className} {...rest}>
-				{children}
-			</div>
-		)
-	}
-
-	return isRelative ? (
-		<NextLink href={href} className={className} {...rest}>
-			{children}
-		</NextLink>
-	) : (
-		<a
-			href={href}
-			className={className}
-			target="_blank"
-			rel="noopener noreferrer"
-			{...rest}
-		>
-			{children}
-		</a>
-	)
-}
-
-Link.displayName = 'Link'
-
-export default memo(Link)
+export default Link

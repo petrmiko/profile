@@ -40,7 +40,7 @@ export default async function LocaleLayout({
 	const { lang } = await params
 	return (
 		<I18nProvider lang={lang}>
-			<div className="grid grid-rows-[1fr_auto] min-h-screen">
+			<div className="grid min-h-dvh grid-rows-[1fr_auto]">
 				{children}
 				<Footer />
 			</div>

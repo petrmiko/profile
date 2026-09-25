@@ -8,7 +8,7 @@ const Skills = () => {
 	const { t } = useTranslation()
 
 	return (
-		<ul className="inline-flex list-none space-x-5">
+		<ul className="flex list-none flex-wrap justify-center gap-2 md:gap-4">
 			<li>
 				<Tooltip
 					content={
@@ -30,13 +30,6 @@ const Skills = () => {
 				</Tooltip>
 			</li>
 			<li>
-				<Tooltip content={t('tooltip-redux')}>
-					<Link href="https://redux-toolkit.js.org/" className={LINK_VARIANT.TAG}>
-						Redux Toolkit
-					</Link>
-				</Tooltip>
-			</li>
-			<li>
 				<Tooltip
 					content={
 						<Trans i18nKey="tooltip-git">
@@ -49,6 +42,13 @@ const Skills = () => {
 				>
 					<Link href="https://git-scm.com" className={LINK_VARIANT.TAG}>
 						Git
+					</Link>
+				</Tooltip>
+			</li>
+			<li>
+				<Tooltip content={t('tooltip-agentic')}>
+					<Link href="https://claude.com/claude-code" className={LINK_VARIANT.TAG}>
+						{t('skill-agentic')}
 					</Link>
 				</Tooltip>
 			</li>

@@ -2,7 +2,6 @@
 
 .tag {
 	@apply inline-block
-        mx-2 my-1
         px-3 py-1.5
         font-mono
         text-xs
@@ -11,7 +10,6 @@
         bg-slate-900/60
         text-slate-300
         transform transition duration-200
-        first:ml-0
 
         hover:border-sky-400/70
         hover:text-sky-200
@@ -22,8 +20,7 @@
 .socialIcon {
 	@apply inline-flex
         rounded-full
-        m-4
-        p-4
+        p-3
         text-slate-400
         transform transition duration-200
 

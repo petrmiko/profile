@@ -15,8 +15,8 @@
 	"tooltip-github": "GitHub Profile",
 	"tooltip-linkedin": "LinkedIn Profile",
 	"tooltip-react": "JS frontend framework by Meta",
-	"tooltip-redux": "Keeping application state outside of React components",
-	"tooltip-twitter": "X Account (in Czech)",
+	"skill-agentic": "Agentic development",
+	"tooltip-agentic": "Claude Code and Cursor - modern tools for modern solutions",
 	"source-code": "Source Code",
 	"404-main": "This is not what you were looking for.",
 	"404-hint": "Try returning to the <1>home page</1>."

@@ -5,13 +5,13 @@ import { RiMastodonLine as Mastodon } from 'react-icons/ri'
 
 import Link, { VARIANT_CLASS as LINK_VARIANT } from '../shared/link'
 import Tooltip from '../shared/tooltip'
-const LINK_ICON_SIZE = 44
+const LINK_ICON_SIZE = 36
 
 const Social = () => {
 	const { t } = useTranslation()
 
 	return (
-		<ul className="flex list-none md:space-x-20">
+		<ul className="flex list-none gap-2 md:gap-16">
 			<li>
 				<Tooltip content={t('tooltip-mastodon')}>
 					<Link

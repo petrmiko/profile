@@ -5,7 +5,7 @@ import Person from '../../components/profile/person'
 
 export default function Profile() {
 	return (
-		<main className="flex flex-col justify-center items-center m-4 space-y-6 md:space-y-8 animate-fade-up">
+		<main className="flex animate-fade-up flex-col items-center justify-center gap-5 p-4 md:gap-7">
 			<Person />
 			<Skills />
 			<EducationAndJob />

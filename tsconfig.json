@@ -29,13 +29,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "next.config.js",
-    "postcss.config.js",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "next.config.js",
-    "postcss.config.js"
+    "node_modules"
   ]
 }

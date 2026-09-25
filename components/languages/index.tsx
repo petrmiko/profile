@@ -17,12 +17,12 @@ const Languages = () => {
 		<select
 			id="languages"
 			className="
-			appearance-none
-            bg-slate-900 border border-slate-700 rounded-md shadow-sm
+			cursor-default
+            appearance-none rounded-md border border-slate-700 bg-slate-900
             p-1
-            text-left text-slate-300 cursor-default
-            focus:outline-hidden focus:ring-0 focus:bg-slate-800 focus:border-sky-400
-            text-sm
+            text-left text-sm text-slate-300
+            shadow-sm focus:border-sky-400 focus:bg-slate-800 focus:ring-0
+            focus:outline-hidden
         "
 			onChange={onChange}
 			value={locale}
