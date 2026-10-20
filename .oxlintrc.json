@@ -1,0 +1,7 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "react", "nextjs", "jsx-a11y", "import", "unicorn", "oxc"],
+	"categories": { "correctness": "error" },
+	"settings": { "react": { "version": "19.2" } },
+	"ignorePatterns": [".next/**", "out/**", "build/**", "next-env.d.ts"]
+}

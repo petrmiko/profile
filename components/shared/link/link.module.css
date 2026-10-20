@@ -1,30 +1,9 @@
 @reference "../../../styles/globals.css";
 
 .tag {
-	@apply inline-block
-        px-3 py-1.5
-        font-mono
-        text-xs
-        rounded-full
-        border border-slate-700
-        bg-slate-900/60
-        text-slate-300
-        transform transition duration-200
-
-        hover:border-sky-400/70
-        hover:text-sky-200
-        hover:bg-slate-800
-        hover:-translate-y-0.5;
+	@apply inline-block transform rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 font-mono text-xs text-slate-300 transition duration-200 hover:-translate-y-0.5 hover:border-sky-400/70 hover:bg-slate-800 hover:text-sky-200;
 }
 
 .socialIcon {
-	@apply inline-flex
-        rounded-full
-        p-3
-        text-slate-400
-        transform transition duration-200
-
-        hover:bg-slate-800/80
-        hover:text-sky-300
-        hover:-translate-y-1;
+	@apply inline-flex transform rounded-full p-3 text-slate-400 transition duration-200 hover:-translate-y-1 hover:bg-slate-800/80 hover:text-sky-300;
 }

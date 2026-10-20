@@ -11,9 +11,7 @@ const Footer = () => {
 			<div className="self-end">© 2023 Petr Miko</div>
 			<ul className="list-none items-baseline justify-between gap-x-3 sm:inline-flex">
 				<li>
-					<Link href="https://github.com/petrmiko/profile">
-						{t('source-code')}
-					</Link>
+					<Link href="https://github.com/petrmiko/profile">{t('source-code')}</Link>
 				</li>
 				<li>
 					<Languages />

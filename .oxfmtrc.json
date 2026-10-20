@@ -1,0 +1,11 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"semi": false,
+	"singleQuote": true,
+	"useTabs": true,
+	"tabWidth": 2,
+	"ignorePatterns": ["next-env.d.ts"],
+	"sortTailwindcss": {
+		"stylesheet": "./styles/globals.css"
+	}
+}

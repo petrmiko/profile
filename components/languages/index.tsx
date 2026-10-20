@@ -16,14 +16,7 @@ const Languages = () => {
 	return (
 		<select
 			id="languages"
-			className="
-			cursor-default
-            appearance-none rounded-md border border-slate-700 bg-slate-900
-            p-1
-            text-left text-sm text-slate-300
-            shadow-sm focus:border-sky-400 focus:bg-slate-800 focus:ring-0
-            focus:outline-hidden
-        "
+			className="cursor-default appearance-none rounded-md border border-slate-700 bg-slate-900 p-1 text-left text-sm text-slate-300 shadow-sm focus:border-sky-400 focus:bg-slate-800 focus:ring-0 focus:outline-hidden"
 			onChange={onChange}
 			value={locale}
 		>

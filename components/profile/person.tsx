@@ -23,9 +23,7 @@ const Person = () => {
 				<h1 className="text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
 					{config.siteAuthor}
 				</h1>
-				<h2 className="text-xl font-medium text-slate-300 md:text-2xl">
-					{t('title-job')}
-				</h2>
+				<h2 className="text-xl font-medium text-slate-300 md:text-2xl">{t('title-job')}</h2>
 				<h3 className="text-sm text-slate-400 md:text-base">
 					{t('city')}, {t('country')}
 				</h3>

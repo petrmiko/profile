@@ -12,9 +12,10 @@ const Skills = () => {
 			<li>
 				<Tooltip
 					content={
-						<Trans i18nKey="tooltip-nodejs">
-							JS runtime outside of browser. However this site uses <Link href="https://nextjs.org/">NextJS</Link> :)
-						</Trans>
+						<Trans
+							i18nKey="tooltip-nodejs"
+							components={{ 1: <Link href="https://nextjs.org/" /> }}
+						/>
 					}
 				>
 					<Link href="https://nodejs.org" className={LINK_VARIANT.TAG}>
@@ -32,12 +33,12 @@ const Skills = () => {
 			<li>
 				<Tooltip
 					content={
-						<Trans i18nKey="tooltip-git">
-							The best versioning system. Because of <Link href="http://effectif.com/git/recovering-lost-git-commits">
-								reflog
-							</Link>
-							!
-						</Trans>
+						<Trans
+							i18nKey="tooltip-git"
+							components={{
+								1: <Link href="http://effectif.com/git/recovering-lost-git-commits" />,
+							}}
+						/>
 					}
 				>
 					<Link href="https://git-scm.com" className={LINK_VARIANT.TAG}>

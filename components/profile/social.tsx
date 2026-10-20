@@ -14,30 +14,21 @@ const Social = () => {
 		<ul className="flex list-none gap-2 md:gap-16">
 			<li>
 				<Tooltip content={t('tooltip-mastodon')}>
-					<Link
-						href="https://mastodonczech.cz/@petrmiko"
-						className={LINK_VARIANT.SOCIAL_ICON}
-					>
+					<Link href="https://mastodonczech.cz/@petrmiko" className={LINK_VARIANT.SOCIAL_ICON}>
 						<Mastodon title="" size={LINK_ICON_SIZE} color="inherit" />
 					</Link>
 				</Tooltip>
 			</li>
 			<li>
 				<Tooltip content={t('tooltip-linkedin')}>
-					<Link
-						href="https://linkedin.com/in/petrmiko"
-						className={LINK_VARIANT.SOCIAL_ICON}
-					>
+					<Link href="https://linkedin.com/in/petrmiko" className={LINK_VARIANT.SOCIAL_ICON}>
 						<Linkedin title="" size={LINK_ICON_SIZE} color="inherit" />
 					</Link>
 				</Tooltip>
 			</li>
 			<li>
 				<Tooltip content={t('tooltip-github')}>
-					<Link
-						href="https://github.com/petrmiko"
-						className={LINK_VARIANT.SOCIAL_ICON}
-					>
+					<Link href="https://github.com/petrmiko" className={LINK_VARIANT.SOCIAL_ICON}>
 						<Github title="" size={LINK_ICON_SIZE} color="inherit" />
 					</Link>
 				</Tooltip>
